@@ -1,0 +1,3084 @@
+define(['dart_sdk', 'packages/vector_math/vector_math.dart'], (function load__packages__math_expressions__math_expressions_dart(dart_sdk, packages__vector_math__vector_math$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const math = dart_sdk.math;
+  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
+  const collection = dart_sdk.collection;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const vector_math = packages__vector_math__vector_math$46dart.vector_math;
+  var math_expressions = Object.create(dart.library);
+  var $hashCode = dartx.hashCode;
+  var $_equals = dartx._equals;
+  var $toString = dartx.toString;
+  var $isInfinite = dartx.isInfinite;
+  var $compareTo = dartx.compareTo;
+  var $toDouble = dartx.toDouble;
+  var $_get = dartx._get;
+  var $length = dartx.length;
+  var $_set = dartx._set;
+  var $fold = dartx.fold;
+  var $map = dartx.map;
+  var $singleWhere = dartx.singleWhere;
+  var $toInt = dartx.toInt;
+  var $isEmpty = dartx.isEmpty;
+  var $trim = dartx.trim;
+  var $removeLast = dartx.removeLast;
+  var $add = dartx.add;
+  var $last = dartx.last;
+  var $replaceAll = dartx.replaceAll;
+  var $runes = dartx.runes;
+  var $containsKey = dartx.containsKey;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $where = dartx.where;
+  var $first = dartx.first;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    Point3L: () => (T.Point3L = dart.constFn(dart.legacy(math_expressions.Point3)))(),
+    IntervalL: () => (T.IntervalL = dart.constFn(dart.legacy(math_expressions.Interval)))(),
+    numL: () => (T.numL = dart.constFn(dart.legacy(core.num)))(),
+    ExpressionL: () => (T.ExpressionL = dart.constFn(dart.legacy(math_expressions.Expression)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    LiteralL: () => (T.LiteralL = dart.constFn(dart.legacy(math_expressions.Literal)))(),
+    UnaryMinusL: () => (T.UnaryMinusL = dart.constFn(dart.legacy(math_expressions.UnaryMinus)))(),
+    doubleL: () => (T.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    ListOfExpressionL: () => (T.ListOfExpressionL = dart.constFn(core.List$(T.ExpressionL())))(),
+    ListLOfExpressionL: () => (T.ListLOfExpressionL = dart.constFn(dart.legacy(T.ListOfExpressionL())))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    boolLAndExpressionLToboolL: () => (T.boolLAndExpressionLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.boolL(), T.ExpressionL()])))(),
+    ExpressionLToExpressionL: () => (T.ExpressionLToExpressionL = dart.constFn(dart.fnType(T.ExpressionL(), [T.ExpressionL()])))(),
+    VariableL: () => (T.VariableL = dart.constFn(dart.legacy(math_expressions.Variable)))(),
+    VariableLToboolL: () => (T.VariableLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.VariableL()])))(),
+    MathFunctionL: () => (T.MathFunctionL = dart.constFn(dart.legacy(math_expressions.MathFunction)))(),
+    JSArrayOfVariableL: () => (T.JSArrayOfVariableL = dart.constFn(_interceptors.JSArray$(T.VariableL())))(),
+    TimesL: () => (T.TimesL = dart.constFn(dart.legacy(math_expressions.Times)))(),
+    LnL: () => (T.LnL = dart.constFn(dart.legacy(math_expressions.Ln)))(),
+    PowerL: () => (T.PowerL = dart.constFn(dart.legacy(math_expressions.Power)))(),
+    NumberL: () => (T.NumberL = dart.constFn(dart.legacy(math_expressions.Number)))(),
+    FloorL: () => (T.FloorL = dart.constFn(dart.legacy(math_expressions.Floor)))(),
+    CeilL: () => (T.CeilL = dart.constFn(dart.legacy(math_expressions.Ceil)))(),
+    JSArrayOfExpressionL: () => (T.JSArrayOfExpressionL = dart.constFn(_interceptors.JSArray$(T.ExpressionL())))(),
+    TokenTypeL: () => (T.TokenTypeL = dart.constFn(dart.legacy(math_expressions.TokenType)))(),
+    IdentityMapOfStringL$TokenTypeL: () => (T.IdentityMapOfStringL$TokenTypeL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), T.TokenTypeL())))(),
+    TokenL: () => (T.TokenL = dart.constFn(dart.legacy(math_expressions.Token)))(),
+    JSArrayOfTokenL: () => (T.JSArrayOfTokenL = dart.constFn(_interceptors.JSArray$(T.TokenL())))(),
+    FormatExceptionL: () => (T.FormatExceptionL = dart.constFn(dart.legacy(core.FormatException)))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    EvaluationTypeL: () => (T.EvaluationTypeL = dart.constFn(dart.legacy(math_expressions.EvaluationType)))(),
+    IdentityMapOfintL$EvaluationTypeL: () => (T.IdentityMapOfintL$EvaluationTypeL = dart.constFn(_js_helper.IdentityMap$(T.intL(), T.EvaluationTypeL())))(),
+    IdentityMapOfStringL$ExpressionL: () => (T.IdentityMapOfStringL$ExpressionL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), T.ExpressionL())))(),
+    _HashSetOfMathFunctionL: () => (T._HashSetOfMathFunctionL = dart.constFn(collection._HashSet$(T.MathFunctionL())))(),
+    MathFunctionLToboolL: () => (T.MathFunctionLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.MathFunctionL()])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: false,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 10,
+        [TokenType_value]: "VAL"
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: false,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 10,
+        [TokenType_value]: "VAR"
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: false,
+        [TokenType_operator]: true,
+        [TokenType_leftAssociative]: false,
+        [TokenType_priority]: 5,
+        [TokenType_value]: "UNMINUS"
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: false,
+        [TokenType_operator]: true,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 1,
+        [TokenType_value]: "PLUS"
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: false,
+        [TokenType_operator]: true,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 1,
+        [TokenType_value]: "MINUS"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: false,
+        [TokenType_operator]: true,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 2,
+        [TokenType_value]: "TIMES"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: false,
+        [TokenType_operator]: true,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 2,
+        [TokenType_value]: "DIV"
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: false,
+        [TokenType_operator]: true,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 2,
+        [TokenType_value]: "MOD"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: false,
+        [TokenType_operator]: true,
+        [TokenType_leftAssociative]: false,
+        [TokenType_priority]: 3,
+        [TokenType_value]: "POW"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "EFUNC"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "LOG"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "LN"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "SQRT"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "ROOT"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "SIN"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "COS"
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "TAN"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "ASIN"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "ACOS"
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "ATAN"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "ABS"
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "CEIL"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "FLOOR"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: true,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: 4,
+        [TokenType_value]: "SGN"
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: false,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: -1,
+        [TokenType_value]: "LBRACE"
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: false,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: -1,
+        [TokenType_value]: "RBRACE"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: math_expressions.TokenType.prototype,
+        [TokenType_function]: false,
+        [TokenType_operator]: false,
+        [TokenType_leftAssociative]: true,
+        [TokenType_priority]: -1,
+        [TokenType_value]: "SEPAR"
+      });
+    }
+  }, false);
+  var C = Array(27).fill(void 0);
+  var I = [
+    "package:math_expressions/math_expressions.dart",
+    "file:///C:/Users/ansha/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/math_expressions-1.1.1/lib/src/expression.dart"
+  ];
+  math_expressions.Point3 = class Point3 extends vector_math.Vector3 {
+    static new(x, y, z) {
+      let t0;
+      t0 = new math_expressions.Point3.zero();
+      return (() => {
+        t0.setValues(x, y, z);
+        return t0;
+      })();
+    }
+    static vec(other) {
+      let t0;
+      t0 = new math_expressions.Point3.zero();
+      return (() => {
+        t0.setFrom(other);
+        return t0;
+      })();
+    }
+    ['+'](v) {
+      return math_expressions.Point3.new(dart.notNull(this.x) + dart.notNull(v.x), dart.notNull(this.y) + dart.notNull(v.y), dart.notNull(this.z) + dart.notNull(v.z));
+    }
+    ['-'](p2) {
+      return vector_math.Vector3.new(dart.notNull(this.x) - dart.notNull(p2.x), dart.notNull(this.y) - dart.notNull(p2.y), dart.notNull(this.z) - dart.notNull(p2.z));
+    }
+    _negate() {
+      return math_expressions.Point3.new(-dart.notNull(this.x), -dart.notNull(this.y), -dart.notNull(this.z));
+    }
+    _equals(o) {
+      if (o == null) return false;
+      if (T.Point3L().is(o)) {
+        return this.x == o.x && this.y == o.y && this.z == o.z;
+      } else {
+        return false;
+      }
+    }
+    lerp(p2, coeff) {
+      return math_expressions.Point3.new(dart.notNull(this.x) * dart.notNull(coeff) + dart.notNull(p2.x) * (1 - dart.notNull(coeff)), dart.notNull(this.y) * dart.notNull(coeff) + dart.notNull(p2.y) * (1 - dart.notNull(coeff)), dart.notNull(this.z) * dart.notNull(coeff) + dart.notNull(p2.z) * (1 - dart.notNull(coeff)));
+    }
+    toVec4() {
+      return vector_math.Vector4.new(this.x, this.y, this.z, 1.0);
+    }
+    get hashCode() {
+      let result = 17;
+      result = 37 * result + dart.hashCode(this.x);
+      result = 37 * result + dart.hashCode(this.y);
+      result = 37 * result + dart.hashCode(this.z);
+      return result;
+    }
+    toString() {
+      return dart.str(this.x) + "," + dart.str(this.y) + "," + dart.str(this.z);
+    }
+  };
+  (math_expressions.Point3.zero = function() {
+    math_expressions.Point3.__proto__.zero.call(this);
+    ;
+  }).prototype = math_expressions.Point3.prototype;
+  dart.addTypeTests(math_expressions.Point3);
+  dart.addTypeCaches(math_expressions.Point3);
+  dart.setMethodSignature(math_expressions.Point3, () => ({
+    __proto__: dart.getMethods(math_expressions.Point3.__proto__),
+    '+': dart.fnType(dart.legacy(math_expressions.Point3), [dart.legacy(vector_math.Vector3)]),
+    '-': dart.fnType(dart.legacy(vector_math.Vector3), [dart.legacy(vector_math.Vector3)]),
+    _negate: dart.fnType(dart.legacy(math_expressions.Point3), []),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    lerp: dart.fnType(dart.legacy(math_expressions.Point3), [dart.legacy(math_expressions.Point3), dart.legacy(core.num)]),
+    toVec4: dart.fnType(dart.legacy(vector_math.Vector4), []),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setGetterSignature(math_expressions.Point3, () => ({
+    __proto__: dart.getGetters(math_expressions.Point3.__proto__),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(math_expressions.Point3, I[0]);
+  dart.defineExtensionMethods(math_expressions.Point3, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(math_expressions.Point3, ['hashCode']);
+  var min$ = dart.privateName(math_expressions, "Interval.min");
+  var max$ = dart.privateName(math_expressions, "Interval.max");
+  var _emptySet = dart.privateName(math_expressions, "_emptySet");
+  var _min = dart.privateName(math_expressions, "_min");
+  var _max = dart.privateName(math_expressions, "_max");
+  math_expressions.Interval = class Interval extends core.Object {
+    get min() {
+      return this[min$];
+    }
+    set min(value) {
+      this[min$] = value;
+    }
+    get max() {
+      return this[max$];
+    }
+    set max(value) {
+      this[max$] = value;
+    }
+    static empty() {
+      return math_expressions.Interval._emptyInterval;
+    }
+    ['+'](i) {
+      if (dart.test(this.isEmpty()) || dart.test(i.isEmpty()))
+        return math_expressions.Interval.empty();
+      else
+        return new math_expressions.Interval.new(dart.notNull(this.min) + dart.notNull(i.min), dart.notNull(this.max) + dart.notNull(i.max));
+    }
+    _negate() {
+      if (dart.test(this.isEmpty()))
+        return math_expressions.Interval.empty();
+      else
+        return new math_expressions.Interval.new(-dart.notNull(this.max), -dart.notNull(this.min));
+    }
+    ['-'](i) {
+      if (dart.test(this.isEmpty()) || dart.test(i.isEmpty()))
+        return math_expressions.Interval.empty();
+      else
+        return new math_expressions.Interval.new(dart.notNull(this.min) - dart.notNull(i.max), dart.notNull(this.max) - dart.notNull(i.min));
+    }
+    ['*'](i) {
+      if (dart.test(this.isEmpty()) || dart.test(i.isEmpty())) return math_expressions.Interval.empty();
+      let min = this[_min](dart.notNull(this.min) * dart.notNull(i.min), dart.notNull(this.min) * dart.notNull(i.max), dart.notNull(this.max) * dart.notNull(i.min), dart.notNull(this.max) * dart.notNull(i.max));
+      let max = this[_max](dart.notNull(this.min) * dart.notNull(i.min), dart.notNull(this.min) * dart.notNull(i.max), dart.notNull(this.max) * dart.notNull(i.min), dart.notNull(this.max) * dart.notNull(i.max));
+      return new math_expressions.Interval.new(min, max);
+    }
+    ['/'](i) {
+      if (dart.test(this.isEmpty()) || dart.test(i.isEmpty())) return math_expressions.Interval.empty();
+      if (dart.test(i.containsZero())) {
+        if (!dart.test(this.isPositive())) {
+          if (i.min === 0 && i.max === 0) {
+            return math_expressions.Interval.empty();
+          }
+          if (dart.notNull(i.min) < dart.notNull(i.max) && i.max === 0) {
+            return new math_expressions.Interval.new(dart.notNull(this.max) / dart.notNull(i.min), 1 / 0);
+          }
+          if (dart.notNull(i.min) < dart.notNull(i.max) && i.min === 0) {
+            return new math_expressions.Interval.new(-1 / 0, dart.notNull(this.max) / dart.notNull(i.max));
+          }
+        }
+        if (dart.test(this.containsZero())) {
+          return new math_expressions.Interval.new(-1 / 0, 1 / 0);
+        }
+        if (dart.notNull(this.max) > 0) {
+          if (i.min === 0 && i.max === 0) {
+            return math_expressions.Interval.empty();
+          }
+          if (dart.notNull(i.min) < dart.notNull(i.max) && i.max === 0) {
+            return new math_expressions.Interval.new(-1 / 0, dart.notNull(this.min) / dart.notNull(i.min));
+          }
+          if (dart.notNull(i.min) < dart.notNull(i.max) && i.min === 0) {
+            return new math_expressions.Interval.new(dart.notNull(this.min) / dart.notNull(i.max), 1 / 0);
+          }
+        }
+        dart.throw(new core.ArgumentError.new("Can not divide by 0"));
+      }
+      return this['*'](new math_expressions.Interval.new(1.0 / dart.notNull(i.max), 1.0 / dart.notNull(i.min)));
+    }
+    _equals(i) {
+      if (i == null) return false;
+      return T.IntervalL().is(i) && this.min == i.min && this.max == i.max;
+    }
+    ['<'](i) {
+      return dart.notNull(this.min) < dart.notNull(i.min) && dart.notNull(this.max) < dart.notNull(i.max);
+    }
+    ['<='](i) {
+      return dart.notNull(this.min) <= dart.notNull(i.min) && dart.notNull(this.max) <= dart.notNull(i.max);
+    }
+    ['>'](i) {
+      return dart.notNull(this.min) > dart.notNull(i.min) && dart.notNull(this.max) > dart.notNull(i.max);
+    }
+    ['>='](i) {
+      return dart.notNull(this.min) >= dart.notNull(i.min) && dart.notNull(this.max) >= dart.notNull(i.max);
+    }
+    glb(i) {
+      return new math_expressions.Interval.new(math.min(T.numL(), this.min, i.min), math.min(T.numL(), this.max, i.max));
+    }
+    lub(i) {
+      return new math_expressions.Interval.new(math.max(T.numL(), this.min, i.min), math.max(T.numL(), this.max, i.max));
+    }
+    includes(i) {
+      return dart.notNull(this.min) <= dart.notNull(i.min) && dart.notNull(i.max) <= dart.notNull(this.max);
+    }
+    contains(element) {
+      return dart.notNull(this.min) <= dart.notNull(element) && dart.notNull(element) <= dart.notNull(this.max);
+    }
+    containsZero() {
+      return dart.notNull(this.min) <= 0 && 0 <= dart.notNull(this.max);
+    }
+    isPositive() {
+      return dart.notNull(this.min) >= 0;
+    }
+    isBound() {
+      return !this.min[$isInfinite] && !this.max[$isInfinite];
+    }
+    isEmpty() {
+      return this[_emptySet];
+    }
+    [_min](a, b, c, d) {
+      return math.min(T.numL(), math.min(T.numL(), a, b), math.min(T.numL(), c, d));
+    }
+    [_max](a, b, c, d) {
+      return math.max(T.numL(), math.max(T.numL(), a, b), math.max(T.numL(), c, d));
+    }
+    length() {
+      return dart.notNull(this.max) - dart.notNull(this.min);
+    }
+    toString() {
+      return "[" + dart.str(this.min) + "," + dart.str(this.max) + "]";
+    }
+    get hashCode() {
+      let result = 17;
+      result = 37 * result + dart.hashCode(this.min);
+      result = 37 * result + dart.hashCode(this.max);
+      return result;
+    }
+    compareTo(other) {
+      T.IntervalL().as(other);
+      if (dart.test(this['<'](other))) return -1;
+      if (dart.test(this['>'](other)))
+        return 1;
+      else
+        return 0;
+    }
+  };
+  (math_expressions.Interval.new = function(min, max) {
+    this[min$] = min;
+    this[max$] = max;
+    this[_emptySet] = false;
+    ;
+  }).prototype = math_expressions.Interval.prototype;
+  (math_expressions.Interval._empty = function() {
+    this[min$] = 0 / 0;
+    this[max$] = 0 / 0;
+    this[_emptySet] = true;
+    ;
+  }).prototype = math_expressions.Interval.prototype;
+  dart.addTypeTests(math_expressions.Interval);
+  dart.addTypeCaches(math_expressions.Interval);
+  math_expressions.Interval[dart.implements] = () => [core.Comparable$(dart.legacy(math_expressions.Interval))];
+  dart.setMethodSignature(math_expressions.Interval, () => ({
+    __proto__: dart.getMethods(math_expressions.Interval.__proto__),
+    '+': dart.fnType(dart.legacy(math_expressions.Interval), [dart.legacy(math_expressions.Interval)]),
+    _negate: dart.fnType(dart.legacy(math_expressions.Interval), []),
+    '-': dart.fnType(dart.legacy(math_expressions.Interval), [dart.legacy(math_expressions.Interval)]),
+    '*': dart.fnType(dart.legacy(math_expressions.Interval), [dart.legacy(math_expressions.Interval)]),
+    '/': dart.fnType(dart.legacy(math_expressions.Interval), [dart.legacy(math_expressions.Interval)]),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    '<': dart.fnType(dart.legacy(core.bool), [dart.legacy(math_expressions.Interval)]),
+    '<=': dart.fnType(dart.legacy(core.bool), [dart.legacy(math_expressions.Interval)]),
+    '>': dart.fnType(dart.legacy(core.bool), [dart.legacy(math_expressions.Interval)]),
+    '>=': dart.fnType(dart.legacy(core.bool), [dart.legacy(math_expressions.Interval)]),
+    glb: dart.fnType(dart.legacy(math_expressions.Interval), [dart.legacy(math_expressions.Interval)]),
+    lub: dart.fnType(dart.legacy(math_expressions.Interval), [dart.legacy(math_expressions.Interval)]),
+    includes: dart.fnType(dart.legacy(core.bool), [dart.legacy(math_expressions.Interval)]),
+    contains: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.num)]),
+    containsZero: dart.fnType(dart.legacy(core.bool), []),
+    isPositive: dart.fnType(dart.legacy(core.bool), []),
+    isBound: dart.fnType(dart.legacy(core.bool), []),
+    isEmpty: dart.fnType(dart.legacy(core.bool), []),
+    [_min]: dart.fnType(dart.legacy(core.num), [dart.legacy(core.num), dart.legacy(core.num), dart.legacy(core.num), dart.legacy(core.num)]),
+    [_max]: dart.fnType(dart.legacy(core.num), [dart.legacy(core.num), dart.legacy(core.num), dart.legacy(core.num), dart.legacy(core.num)]),
+    length: dart.fnType(dart.legacy(core.num), []),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), []),
+    compareTo: dart.fnType(dart.legacy(core.int), [dart.legacy(core.Object)]),
+    [$compareTo]: dart.fnType(dart.legacy(core.int), [dart.legacy(core.Object)])
+  }));
+  dart.setGetterSignature(math_expressions.Interval, () => ({
+    __proto__: dart.getGetters(math_expressions.Interval.__proto__),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(math_expressions.Interval, I[0]);
+  dart.setFieldSignature(math_expressions.Interval, () => ({
+    __proto__: dart.getFields(math_expressions.Interval.__proto__),
+    min: dart.fieldType(dart.legacy(core.num)),
+    max: dart.fieldType(dart.legacy(core.num)),
+    [_emptySet]: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  dart.defineExtensionMethods(math_expressions.Interval, ['_equals', 'toString', 'compareTo']);
+  dart.defineExtensionAccessors(math_expressions.Interval, ['hashCode']);
+  dart.defineLazy(math_expressions.Interval, {
+    /*math_expressions.Interval._emptyInterval*/get _emptyInterval() {
+      return new math_expressions.Interval._empty();
+    }
+  }, true);
+  var _toExpression = dart.privateName(math_expressions, "_toExpression");
+  var _isNumber = dart.privateName(math_expressions, "_isNumber");
+  math_expressions.Expression = class Expression extends core.Object {
+    ['+'](exp) {
+      return new math_expressions.Plus.new(this, exp);
+    }
+    ['-'](exp) {
+      return new math_expressions.Minus.new(this, exp);
+    }
+    ['*'](exp) {
+      return new math_expressions.Times.new(this, exp);
+    }
+    ['/'](exp) {
+      return new math_expressions.Divide.new(this, exp);
+    }
+    ['%'](exp) {
+      return new math_expressions.Modulo.new(this, exp);
+    }
+    ['^'](exp) {
+      return new math_expressions.Power.new(this, exp);
+    }
+    _negate() {
+      return new math_expressions.UnaryMinus.new(this);
+    }
+    simplify() {
+      return this;
+    }
+    [_toExpression](arg) {
+      if (T.ExpressionL().is(arg)) {
+        return arg;
+      }
+      if (T.numL().is(arg)) {
+        return new math_expressions.Number.new(arg);
+      }
+      if (T.StringL().is(arg)) {
+        return new math_expressions.Variable.new(arg);
+      }
+      dart.throw(new core.ArgumentError.new(dart.str(arg) + " is not a valid expression!"));
+    }
+    [_isNumber](exp, value = 0) {
+      if (T.LiteralL().is(exp) && dart.test(exp.isConstant())) {
+        return dart.equals(exp.getConstantValue(), value);
+      }
+      return false;
+    }
+  };
+  (math_expressions.Expression.new = function() {
+    ;
+  }).prototype = math_expressions.Expression.prototype;
+  dart.addTypeTests(math_expressions.Expression);
+  dart.addTypeCaches(math_expressions.Expression);
+  dart.setMethodSignature(math_expressions.Expression, () => ({
+    __proto__: dart.getMethods(math_expressions.Expression.__proto__),
+    '+': dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(math_expressions.Expression)]),
+    '-': dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(math_expressions.Expression)]),
+    '*': dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(math_expressions.Expression)]),
+    '/': dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(math_expressions.Expression)]),
+    '%': dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(math_expressions.Expression)]),
+    '^': dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(math_expressions.Expression)]),
+    _negate: dart.fnType(dart.legacy(math_expressions.Expression), []),
+    simplify: dart.fnType(dart.legacy(math_expressions.Expression), []),
+    [_toExpression]: dart.fnType(dart.legacy(math_expressions.Expression), [dart.dynamic]),
+    [_isNumber]: dart.fnType(dart.legacy(core.bool), [dart.legacy(math_expressions.Expression)], [dart.legacy(core.num)])
+  }));
+  dart.setLibraryUri(math_expressions.Expression, I[0]);
+  var first$ = dart.privateName(math_expressions, "BinaryOperator.first");
+  var second$ = dart.privateName(math_expressions, "BinaryOperator.second");
+  math_expressions.BinaryOperator = class BinaryOperator extends math_expressions.Expression {
+    get first() {
+      return this[first$];
+    }
+    set first(value) {
+      this[first$] = value;
+    }
+    get second() {
+      return this[second$];
+    }
+    set second(value) {
+      this[second$] = value;
+    }
+  };
+  (math_expressions.BinaryOperator.new = function(first, second) {
+    this[second$] = null;
+    this[first$] = null;
+    this.first = this[_toExpression](first);
+    this.second = this[_toExpression](second);
+  }).prototype = math_expressions.BinaryOperator.prototype;
+  (math_expressions.BinaryOperator.raw = function(first, second) {
+    this[first$] = first;
+    this[second$] = second;
+    ;
+  }).prototype = math_expressions.BinaryOperator.prototype;
+  dart.addTypeTests(math_expressions.BinaryOperator);
+  dart.addTypeCaches(math_expressions.BinaryOperator);
+  dart.setLibraryUri(math_expressions.BinaryOperator, I[0]);
+  dart.setFieldSignature(math_expressions.BinaryOperator, () => ({
+    __proto__: dart.getFields(math_expressions.BinaryOperator.__proto__),
+    first: dart.fieldType(dart.legacy(math_expressions.Expression)),
+    second: dart.fieldType(dart.legacy(math_expressions.Expression))
+  }));
+  var exp$ = dart.privateName(math_expressions, "UnaryOperator.exp");
+  math_expressions.UnaryOperator = class UnaryOperator extends math_expressions.Expression {
+    get exp() {
+      return this[exp$];
+    }
+    set exp(value) {
+      this[exp$] = value;
+    }
+  };
+  (math_expressions.UnaryOperator.new = function(exp) {
+    this[exp$] = null;
+    this.exp = this[_toExpression](exp);
+  }).prototype = math_expressions.UnaryOperator.prototype;
+  (math_expressions.UnaryOperator.raw = function(exp) {
+    this[exp$] = exp;
+    ;
+  }).prototype = math_expressions.UnaryOperator.prototype;
+  dart.addTypeTests(math_expressions.UnaryOperator);
+  dart.addTypeCaches(math_expressions.UnaryOperator);
+  dart.setLibraryUri(math_expressions.UnaryOperator, I[0]);
+  dart.setFieldSignature(math_expressions.UnaryOperator, () => ({
+    __proto__: dart.getFields(math_expressions.UnaryOperator.__proto__),
+    exp: dart.fieldType(dart.legacy(math_expressions.Expression))
+  }));
+  math_expressions.UnaryMinus = class UnaryMinus extends math_expressions.UnaryOperator {
+    derive(toVar) {
+      return new math_expressions.UnaryMinus.new(this.exp.derive(toVar));
+    }
+    simplify() {
+      let simplifiedOp = this.exp.simplify();
+      if (T.UnaryMinusL().is(simplifiedOp)) {
+        return simplifiedOp.exp;
+      }
+      if (dart.test(this[_isNumber](simplifiedOp, 0))) {
+        return simplifiedOp;
+      }
+      return new math_expressions.UnaryMinus.new(simplifiedOp);
+    }
+    evaluate(type, context) {
+      return dart.dsend(this.exp.evaluate(type, context), '_negate', []);
+    }
+    toString() {
+      return "(-" + dart.str(this.exp) + ")";
+    }
+  };
+  (math_expressions.UnaryMinus.new = function(exp) {
+    math_expressions.UnaryMinus.__proto__.new.call(this, exp);
+    ;
+  }).prototype = math_expressions.UnaryMinus.prototype;
+  dart.addTypeTests(math_expressions.UnaryMinus);
+  dart.addTypeCaches(math_expressions.UnaryMinus);
+  dart.setMethodSignature(math_expressions.UnaryMinus, () => ({
+    __proto__: dart.getMethods(math_expressions.UnaryMinus.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(math_expressions.UnaryMinus, I[0]);
+  dart.defineExtensionMethods(math_expressions.UnaryMinus, ['toString']);
+  math_expressions.Plus = class Plus extends math_expressions.BinaryOperator {
+    derive(toVar) {
+      return new math_expressions.Plus.new(this.first.derive(toVar), this.second.derive(toVar));
+    }
+    simplify() {
+      let firstOp = this.first.simplify();
+      let secondOp = this.second.simplify();
+      if (dart.test(this[_isNumber](firstOp, 0))) {
+        return secondOp;
+      }
+      if (dart.test(this[_isNumber](secondOp, 0))) {
+        return firstOp;
+      }
+      if (T.UnaryMinusL().is(secondOp)) {
+        return firstOp['-'](secondOp.exp);
+      }
+      return new math_expressions.Plus.new(firstOp, secondOp);
+    }
+    evaluate(type, context) {
+      return dart.dsend(this.first.evaluate(type, context), '+', [this.second.evaluate(type, context)]);
+    }
+    toString() {
+      return "(" + dart.str(this.first) + " + " + dart.str(this.second) + ")";
+    }
+  };
+  (math_expressions.Plus.new = function(first, second) {
+    math_expressions.Plus.__proto__.new.call(this, first, second);
+    ;
+  }).prototype = math_expressions.Plus.prototype;
+  dart.addTypeTests(math_expressions.Plus);
+  dart.addTypeCaches(math_expressions.Plus);
+  dart.setMethodSignature(math_expressions.Plus, () => ({
+    __proto__: dart.getMethods(math_expressions.Plus.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(math_expressions.Plus, I[0]);
+  dart.defineExtensionMethods(math_expressions.Plus, ['toString']);
+  math_expressions.Minus = class Minus extends math_expressions.BinaryOperator {
+    derive(toVar) {
+      return new math_expressions.Minus.new(this.first.derive(toVar), this.second.derive(toVar));
+    }
+    simplify() {
+      let firstOp = this.first.simplify();
+      let secondOp = this.second.simplify();
+      if (dart.test(this[_isNumber](secondOp, 0))) {
+        return firstOp;
+      }
+      if (dart.test(this[_isNumber](firstOp, 0))) {
+        return secondOp._negate();
+      }
+      if (T.UnaryMinusL().is(secondOp)) {
+        return firstOp['+'](secondOp.exp);
+      }
+      return new math_expressions.Minus.new(firstOp, secondOp);
+    }
+    evaluate(type, context) {
+      return dart.dsend(this.first.evaluate(type, context), '-', [this.second.evaluate(type, context)]);
+    }
+    toString() {
+      return "(" + dart.str(this.first) + " - " + dart.str(this.second) + ")";
+    }
+  };
+  (math_expressions.Minus.new = function(first, second) {
+    math_expressions.Minus.__proto__.new.call(this, first, second);
+    ;
+  }).prototype = math_expressions.Minus.prototype;
+  dart.addTypeTests(math_expressions.Minus);
+  dart.addTypeCaches(math_expressions.Minus);
+  dart.setMethodSignature(math_expressions.Minus, () => ({
+    __proto__: dart.getMethods(math_expressions.Minus.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(math_expressions.Minus, I[0]);
+  dart.defineExtensionMethods(math_expressions.Minus, ['toString']);
+  math_expressions.Times = class Times extends math_expressions.BinaryOperator {
+    derive(toVar) {
+      return new math_expressions.Plus.new(new math_expressions.Times.new(this.first, this.second.derive(toVar)), new math_expressions.Times.new(this.first.derive(toVar), this.second));
+    }
+    simplify() {
+      let firstOp = this.first.simplify();
+      let secondOp = this.second.simplify();
+      let tempResult = null;
+      let negative = false;
+      if (T.UnaryMinusL().is(firstOp)) {
+        firstOp = T.UnaryMinusL().as(firstOp).exp;
+        negative = !negative;
+      }
+      if (T.UnaryMinusL().is(secondOp)) {
+        secondOp = T.UnaryMinusL().as(secondOp).exp;
+        negative = !negative;
+      }
+      if (dart.test(this[_isNumber](firstOp, 0))) {
+        return firstOp;
+      }
+      if (dart.test(this[_isNumber](firstOp, 1))) {
+        tempResult = secondOp;
+      }
+      if (dart.test(this[_isNumber](secondOp, 0))) {
+        return secondOp;
+      }
+      if (dart.test(this[_isNumber](secondOp, 1))) {
+        tempResult = firstOp;
+      }
+      if (tempResult == null) {
+        tempResult = new math_expressions.Times.new(firstOp, secondOp);
+        return negative ? tempResult._negate() : tempResult;
+      }
+      return negative ? new math_expressions.UnaryMinus.new(tempResult) : tempResult;
+    }
+    evaluate(type, context) {
+      let t0;
+      let firstEval = this.first.evaluate(type, context);
+      let secondEval = this.second.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.VECTOR)) {
+        if (T.doubleL().is(secondEval)) {
+        } else {
+          let $eval = (t0 = dart.dsend(firstEval, 'clone', []), (() => {
+            dart.dsend(t0, 'multiply', [secondEval]);
+            return t0;
+          })());
+          return $eval;
+        }
+      }
+      return dart.dsend(firstEval, '*', [secondEval]);
+    }
+    toString() {
+      return "(" + dart.str(this.first) + " * " + dart.str(this.second) + ")";
+    }
+  };
+  (math_expressions.Times.new = function(first, second) {
+    math_expressions.Times.__proto__.new.call(this, first, second);
+    ;
+  }).prototype = math_expressions.Times.prototype;
+  dart.addTypeTests(math_expressions.Times);
+  dart.addTypeCaches(math_expressions.Times);
+  dart.setMethodSignature(math_expressions.Times, () => ({
+    __proto__: dart.getMethods(math_expressions.Times.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(math_expressions.Times, I[0]);
+  dart.defineExtensionMethods(math_expressions.Times, ['toString']);
+  math_expressions.Divide = class Divide extends math_expressions.BinaryOperator {
+    derive(toVar) {
+      return this.first.derive(toVar)['*'](this.second)['-'](this.first['*'](this.second.derive(toVar)))['/'](this.second['*'](this.second));
+    }
+    simplify() {
+      let firstOp = this.first.simplify();
+      let secondOp = this.second.simplify();
+      let tempResult = null;
+      let negative = false;
+      if (T.UnaryMinusL().is(firstOp)) {
+        firstOp = T.UnaryMinusL().as(firstOp).exp;
+        negative = !negative;
+      }
+      if (T.UnaryMinusL().is(secondOp)) {
+        secondOp = T.UnaryMinusL().as(secondOp).exp;
+        negative = !negative;
+      }
+      if (dart.test(this[_isNumber](firstOp, 0))) {
+        return firstOp;
+      }
+      if (dart.test(this[_isNumber](secondOp, 1))) {
+        tempResult = firstOp;
+      } else {
+        tempResult = new math_expressions.Divide.new(firstOp, secondOp);
+      }
+      return negative ? new math_expressions.UnaryMinus.new(tempResult) : tempResult;
+    }
+    evaluate(type, context) {
+      let t0;
+      let firstEval = this.first.evaluate(type, context);
+      let secondEval = this.second.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.VECTOR)) {
+        if (T.doubleL().is(secondEval)) {
+        } else {
+          let $eval = (t0 = dart.dsend(firstEval, 'clone', []), (() => {
+            dart.dsend(t0, 'divide', [secondEval]);
+            return t0;
+          })());
+          return $eval;
+        }
+      }
+      return dart.dsend(firstEval, '/', [secondEval]);
+    }
+    toString() {
+      return "(" + dart.str(this.first) + " / " + dart.str(this.second) + ")";
+    }
+  };
+  (math_expressions.Divide.new = function(dividend, divisor) {
+    math_expressions.Divide.__proto__.new.call(this, dividend, divisor);
+    ;
+  }).prototype = math_expressions.Divide.prototype;
+  dart.addTypeTests(math_expressions.Divide);
+  dart.addTypeCaches(math_expressions.Divide);
+  dart.setMethodSignature(math_expressions.Divide, () => ({
+    __proto__: dart.getMethods(math_expressions.Divide.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(math_expressions.Divide, I[0]);
+  dart.defineExtensionMethods(math_expressions.Divide, ['toString']);
+  math_expressions.Modulo = class Modulo extends math_expressions.BinaryOperator {
+    derive(toVar) {
+      let a2 = new math_expressions.Abs.new(this.second);
+      return this.first.derive(toVar)['-'](new math_expressions.Floor.new(this.first['/'](a2))['*'](a2.derive(toVar)));
+    }
+    simplify() {
+      let firstOp = this.first.simplify();
+      let secondOp = this.second.simplify();
+      if (dart.test(this[_isNumber](firstOp, 0))) {
+        return firstOp;
+      }
+      if (T.UnaryMinusL().is(secondOp)) {
+        secondOp = T.UnaryMinusL().as(secondOp).exp;
+      }
+      return new math_expressions.Modulo.new(firstOp, secondOp);
+    }
+    evaluate(type, context) {
+      let firstEval = this.first.evaluate(type, context);
+      let secondEval = this.second.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return dart.dsend(firstEval, '%', [secondEval]);
+      }
+      dart.throw(new core.UnimplementedError.new("Evaluate Modulo with type " + dart.str(type) + " not supported yet."));
+    }
+    toString() {
+      return "(" + dart.str(this.first) + " % " + dart.str(this.second) + ")";
+    }
+  };
+  (math_expressions.Modulo.new = function(dividend, divisor) {
+    math_expressions.Modulo.__proto__.new.call(this, dividend, divisor);
+    ;
+  }).prototype = math_expressions.Modulo.prototype;
+  dart.addTypeTests(math_expressions.Modulo);
+  dart.addTypeCaches(math_expressions.Modulo);
+  dart.setMethodSignature(math_expressions.Modulo, () => ({
+    __proto__: dart.getMethods(math_expressions.Modulo.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(math_expressions.Modulo, I[0]);
+  dart.defineExtensionMethods(math_expressions.Modulo, ['toString']);
+  math_expressions.Power = class Power extends math_expressions.BinaryOperator {
+    derive(toVar) {
+      return this.asE().derive(toVar);
+    }
+    simplify() {
+      let baseOp = this.first.simplify();
+      let exponentOp = this.second.simplify();
+      if (dart.test(this[_isNumber](baseOp, 0))) {
+        return baseOp;
+      }
+      if (dart.test(this[_isNumber](baseOp, 1))) {
+        return baseOp;
+      }
+      if (dart.test(this[_isNumber](exponentOp, 0))) {
+        return new math_expressions.Number.new(1.0);
+      }
+      if (dart.test(this[_isNumber](exponentOp, 1))) {
+        return baseOp;
+      }
+      return new math_expressions.Power.new(baseOp, exponentOp);
+    }
+    evaluate(type, context) {
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return math.pow(core.num.as(this.first.evaluate(type, context)), core.num.as(this.second.evaluate(type, context)));
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.INTERVAL)) {
+        let interval = T.IntervalL().as(this.first.evaluate(type, context));
+        let exponent = this.second.evaluate(math_expressions.EvaluationType.REAL, context);
+        if (T.doubleL().is(exponent)) {
+          exponent = dart.dsend(exponent, 'toInt', []);
+        }
+        let evalMin = null;
+        let evalMax = null;
+        if (dart.dtest(dart.dload(exponent, 'isOdd'))) {
+          evalMin = math.pow(interval.min, core.num.as(exponent));
+          evalMax = math.pow(interval.max, core.num.as(exponent));
+        } else {
+          if (dart.notNull(interval.min) >= 0) {
+            evalMin = math.pow(interval.min, core.num.as(exponent));
+            evalMax = math.pow(interval.max, core.num.as(exponent));
+          }
+          if (dart.notNull(interval.min) >= 0) {
+            evalMin = math.pow(interval.max, core.num.as(exponent));
+            evalMax = math.pow(interval.min, core.num.as(exponent));
+          }
+          evalMin = 0;
+          evalMax = math.max(T.numL(), math.pow(interval.min, core.num.as(exponent)), math.pow(interval.min, core.num.as(exponent)));
+        }
+        if (!(dart.notNull(evalMin) <= dart.notNull(evalMax))) dart.assertFailed(null, I[1], 637, 14, "evalMin <= evalMax");
+        return new math_expressions.Interval.new(evalMin, evalMax);
+      }
+      dart.throw(new core.UnimplementedError.new("Evaluate Power with type " + dart.str(type) + " not supported yet."));
+    }
+    toString() {
+      return "(" + dart.str(this.first) + "^" + dart.str(this.second) + ")";
+    }
+    asE() {
+      return new math_expressions.Exponential.new(this.second['*'](new math_expressions.Ln.new(this.first)));
+    }
+  };
+  (math_expressions.Power.new = function(x, exp) {
+    math_expressions.Power.__proto__.new.call(this, x, exp);
+    ;
+  }).prototype = math_expressions.Power.prototype;
+  dart.addTypeTests(math_expressions.Power);
+  dart.addTypeCaches(math_expressions.Power);
+  dart.setMethodSignature(math_expressions.Power, () => ({
+    __proto__: dart.getMethods(math_expressions.Power.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), []),
+    asE: dart.fnType(dart.legacy(math_expressions.Expression), [])
+  }));
+  dart.setLibraryUri(math_expressions.Power, I[0]);
+  dart.defineExtensionMethods(math_expressions.Power, ['toString']);
+  var value$ = dart.privateName(math_expressions, "Literal.value");
+  math_expressions.Literal = class Literal extends math_expressions.Expression {
+    get value() {
+      return this[value$];
+    }
+    set value(value) {
+      this[value$] = value;
+    }
+    isConstant() {
+      return false;
+    }
+    getConstantValue() {
+      dart.throw(new core.StateError.new("Literal " + dart.str(this) + " is not constant."));
+    }
+    toString() {
+      return dart.toString(this.value);
+    }
+  };
+  (math_expressions.Literal.new = function(value = null) {
+    this[value$] = value;
+    ;
+  }).prototype = math_expressions.Literal.prototype;
+  dart.addTypeTests(math_expressions.Literal);
+  dart.addTypeCaches(math_expressions.Literal);
+  dart.setMethodSignature(math_expressions.Literal, () => ({
+    __proto__: dart.getMethods(math_expressions.Literal.__proto__),
+    isConstant: dart.fnType(dart.legacy(core.bool), []),
+    getConstantValue: dart.fnType(dart.dynamic, []),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(math_expressions.Literal, I[0]);
+  dart.setFieldSignature(math_expressions.Literal, () => ({
+    __proto__: dart.getFields(math_expressions.Literal.__proto__),
+    value: dart.fieldType(dart.dynamic)
+  }));
+  dart.defineExtensionMethods(math_expressions.Literal, ['toString']);
+  math_expressions.Number = class Number extends math_expressions.Literal {
+    isConstant() {
+      return true;
+    }
+    getConstantValue() {
+      return T.doubleL().as(this.value);
+    }
+    evaluate(type, context) {
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return this.value;
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.INTERVAL)) {
+        let intLit = new math_expressions.IntervalLiteral.fromSingle(this);
+        return intLit.evaluate(type, context);
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.VECTOR)) {
+        return this.value;
+      }
+      dart.throw(new core.UnsupportedError.new("Number " + dart.str(this) + " can not be interpreted as: " + dart.str(type)));
+    }
+    derive(toVar) {
+      return new math_expressions.Number.new(0.0);
+    }
+  };
+  (math_expressions.Number.new = function(value) {
+    math_expressions.Number.__proto__.new.call(this, value[$toDouble]());
+    ;
+  }).prototype = math_expressions.Number.prototype;
+  dart.addTypeTests(math_expressions.Number);
+  dart.addTypeCaches(math_expressions.Number);
+  dart.setMethodSignature(math_expressions.Number, () => ({
+    __proto__: dart.getMethods(math_expressions.Number.__proto__),
+    getConstantValue: dart.fnType(dart.legacy(core.double), []),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)])
+  }));
+  dart.setLibraryUri(math_expressions.Number, I[0]);
+  math_expressions.Vector = class Vector extends math_expressions.Literal {
+    _get(i) {
+      return this.elements[$_get](i);
+    }
+    get elements() {
+      return T.ListLOfExpressionL().as(this.value);
+    }
+    get length() {
+      return this.elements[$length];
+    }
+    derive(toVar) {
+      let elementDerivatives = T.ListOfExpressionL().new(this.length);
+      for (let i = 0; i < dart.notNull(this.length); i = i + 1) {
+        elementDerivatives[$_set](i, this.elements[$_get](i).derive(toVar));
+      }
+      return new math_expressions.Vector.new(elementDerivatives);
+    }
+    simplify() {
+      let simplifiedElements = T.ListOfExpressionL().new(this.length);
+      for (let i = 0; i < dart.notNull(this.length); i = i + 1) {
+        simplifiedElements[$_set](i, this.elements[$_get](i).simplify());
+      }
+      return new math_expressions.Vector.new(simplifiedElements);
+    }
+    evaluate(type, context) {
+      if (dart.equals(type, math_expressions.EvaluationType.VECTOR)) {
+        let elementType = math_expressions.EvaluationType.REAL;
+        if (this.length === 1) {
+          return this.elements[$_get](0).evaluate(elementType, context);
+        }
+        if (this.length === 2) {
+          let x = null;
+          let y = null;
+          x = T.doubleL().as(this.elements[$_get](0).evaluate(elementType, context));
+          y = T.doubleL().as(this.elements[$_get](1).evaluate(elementType, context));
+          return vector_math.Vector2.new(x, y);
+        }
+        if (this.length === 3) {
+          let x = null;
+          let y = null;
+          let z = null;
+          x = T.doubleL().as(this.elements[$_get](0).evaluate(elementType, context));
+          y = T.doubleL().as(this.elements[$_get](1).evaluate(elementType, context));
+          z = T.doubleL().as(this.elements[$_get](2).evaluate(elementType, context));
+          return vector_math.Vector3.new(x, y, z);
+        }
+        if (this.length === 4) {
+          let x = null;
+          let y = null;
+          let z = null;
+          let w = null;
+          x = T.doubleL().as(this.elements[$_get](0).evaluate(elementType, context));
+          y = T.doubleL().as(this.elements[$_get](1).evaluate(elementType, context));
+          z = T.doubleL().as(this.elements[$_get](2).evaluate(elementType, context));
+          w = T.doubleL().as(this.elements[$_get](3).evaluate(elementType, context));
+          return vector_math.Vector4.new(x, y, z, w);
+        }
+        if (dart.notNull(this.length) > 4) {
+          dart.throw(new core.UnimplementedError.new("Vector of arbitrary length (> 4) are not supported yet."));
+        }
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.REAL) && this.length === 1) {
+        return this.elements[$_get](0).evaluate(type, context);
+      }
+      dart.throw(new core.UnsupportedError.new("Vector " + dart.str(this) + " with length " + dart.str(this.length) + " can not be interpreted as: " + dart.str(type)));
+    }
+    isConstant() {
+      return this.elements[$fold](T.boolL(), true, dart.fn((prev, elem) => dart.test(prev) && T.LiteralL().is(elem) && dart.test(elem.isConstant()), T.boolLAndExpressionLToboolL()));
+    }
+    getConstantValue() {
+      let constVals = this.elements[$map](T.ExpressionL(), dart.fn(e => T.ExpressionL().as(T.LiteralL().is(e) ? e.getConstantValue() : dart.throw(new core.UnsupportedError.new("Vector " + dart.str(this) + " is not constant."))), T.ExpressionLToExpressionL()));
+      return new math_expressions.Vector.new(T.ListLOfExpressionL().as(constVals));
+    }
+  };
+  (math_expressions.Vector.new = function(elements) {
+    math_expressions.Vector.__proto__.new.call(this, elements);
+    ;
+  }).prototype = math_expressions.Vector.prototype;
+  dart.addTypeTests(math_expressions.Vector);
+  dart.addTypeCaches(math_expressions.Vector);
+  dart.setMethodSignature(math_expressions.Vector, () => ({
+    __proto__: dart.getMethods(math_expressions.Vector.__proto__),
+    _get: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.int)]),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    getConstantValue: dart.fnType(dart.legacy(math_expressions.Vector), [])
+  }));
+  dart.setGetterSignature(math_expressions.Vector, () => ({
+    __proto__: dart.getGetters(math_expressions.Vector.__proto__),
+    elements: dart.legacy(core.List$(dart.legacy(math_expressions.Expression))),
+    length: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(math_expressions.Vector, I[0]);
+  var name$ = dart.privateName(math_expressions, "Variable.name");
+  math_expressions.Variable = class Variable extends math_expressions.Literal {
+    get name() {
+      return this[name$];
+    }
+    set name(value) {
+      this[name$] = value;
+    }
+    derive(toVar) {
+      return this.name == toVar ? new math_expressions.Number.new(1.0) : new math_expressions.Number.new(0.0);
+    }
+    toString() {
+      return dart.str(this.name);
+    }
+    evaluate(type, context) {
+      return context.getExpression(this.name).evaluate(type, context);
+    }
+  };
+  (math_expressions.Variable.new = function(name) {
+    this[name$] = name;
+    math_expressions.Variable.__proto__.new.call(this);
+    ;
+  }).prototype = math_expressions.Variable.prototype;
+  dart.addTypeTests(math_expressions.Variable);
+  dart.addTypeCaches(math_expressions.Variable);
+  dart.setMethodSignature(math_expressions.Variable, () => ({
+    __proto__: dart.getMethods(math_expressions.Variable.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setLibraryUri(math_expressions.Variable, I[0]);
+  dart.setFieldSignature(math_expressions.Variable, () => ({
+    __proto__: dart.getFields(math_expressions.Variable.__proto__),
+    name: dart.fieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(math_expressions.Variable, ['toString']);
+  math_expressions.BoundVariable = class BoundVariable extends math_expressions.Variable {
+    isConstant() {
+      return T.boolL().as(T.LiteralL().is(this.value) ? dart.dsend(this.value, 'isConstant', []) : false);
+    }
+    getConstantValue() {
+      return dart.dload(this.value, 'value');
+    }
+    derive(toVar) {
+      return T.ExpressionL().as(dart.dsend(this.value, 'derive', [toVar]));
+    }
+    simplify() {
+      return T.ExpressionL().as(dart.dsend(this.value, 'simplify', []));
+    }
+    evaluate(type, context) {
+      return dart.dsend(this.value, 'evaluate', [type, context]);
+    }
+    toString() {
+      return "{" + dart.str(this.value) + "}";
+    }
+  };
+  (math_expressions.BoundVariable.new = function(expr) {
+    math_expressions.BoundVariable.__proto__.new.call(this, "anon");
+    this.value = expr;
+  }).prototype = math_expressions.BoundVariable.prototype;
+  dart.addTypeTests(math_expressions.BoundVariable);
+  dart.addTypeCaches(math_expressions.BoundVariable);
+  dart.setLibraryUri(math_expressions.BoundVariable, I[0]);
+  dart.defineExtensionMethods(math_expressions.BoundVariable, ['toString']);
+  var min$0 = dart.privateName(math_expressions, "IntervalLiteral.min");
+  var max$0 = dart.privateName(math_expressions, "IntervalLiteral.max");
+  math_expressions.IntervalLiteral = class IntervalLiteral extends math_expressions.Literal {
+    get min() {
+      return this[min$0];
+    }
+    set min(value) {
+      this[min$0] = value;
+    }
+    get max() {
+      return this[max$0];
+    }
+    set max(value) {
+      this[max$0] = value;
+    }
+    derive(toVar) {
+      dart.throw(new core.UnimplementedError.new("Interval differentiation not supported yet."));
+    }
+    simplify() {
+      return new math_expressions.IntervalLiteral.new(this.min.simplify(), this.max.simplify());
+    }
+    evaluate(type, context) {
+      let minEval = T.numL().as(this.min.evaluate(math_expressions.EvaluationType.REAL, context));
+      let maxEval = T.numL().as(this.max.evaluate(math_expressions.EvaluationType.REAL, context));
+      if (dart.equals(type, math_expressions.EvaluationType.INTERVAL)) {
+        return new math_expressions.Interval.new(minEval, maxEval);
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        if (minEval == maxEval) {
+          return minEval;
+        }
+      }
+      dart.throw(new core.UnsupportedError.new("Interval " + dart.str(this) + " can not be interpreted as: " + dart.str(type)));
+    }
+    toString() {
+      return "I[" + dart.str(this.min) + ", " + dart.str(this.max) + "]";
+    }
+    isConstant() {
+      return T.LiteralL().is(this.min) && dart.test(T.LiteralL().as(this.min).isConstant()) && T.LiteralL().is(this.max) && dart.test(T.LiteralL().as(this.max).isConstant());
+    }
+    getConstantValue() {
+      return new math_expressions.Interval.new(T.numL().as(T.LiteralL().as(this.min).getConstantValue()), T.numL().as(T.LiteralL().as(this.max).getConstantValue()));
+    }
+  };
+  (math_expressions.IntervalLiteral.new = function(min, max) {
+    this[min$0] = min;
+    this[max$0] = max;
+    math_expressions.IntervalLiteral.__proto__.new.call(this);
+    ;
+  }).prototype = math_expressions.IntervalLiteral.prototype;
+  (math_expressions.IntervalLiteral.fromSingle = function(exp) {
+    this[min$0] = exp;
+    this[max$0] = exp;
+    math_expressions.IntervalLiteral.__proto__.new.call(this);
+    ;
+  }).prototype = math_expressions.IntervalLiteral.prototype;
+  dart.addTypeTests(math_expressions.IntervalLiteral);
+  dart.addTypeCaches(math_expressions.IntervalLiteral);
+  dart.setMethodSignature(math_expressions.IntervalLiteral, () => ({
+    __proto__: dart.getMethods(math_expressions.IntervalLiteral.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    getConstantValue: dart.fnType(dart.legacy(math_expressions.Interval), [])
+  }));
+  dart.setLibraryUri(math_expressions.IntervalLiteral, I[0]);
+  dart.setFieldSignature(math_expressions.IntervalLiteral, () => ({
+    __proto__: dart.getFields(math_expressions.IntervalLiteral.__proto__),
+    min: dart.fieldType(dart.legacy(math_expressions.Expression)),
+    max: dart.fieldType(dart.legacy(math_expressions.Expression))
+  }));
+  dart.defineExtensionMethods(math_expressions.IntervalLiteral, ['toString']);
+  var name$0 = dart.privateName(math_expressions, "MathFunction.name");
+  var args$ = dart.privateName(math_expressions, "MathFunction.args");
+  math_expressions.MathFunction = class MathFunction extends math_expressions.Expression {
+    get name() {
+      return this[name$0];
+    }
+    set name(value) {
+      this[name$0] = value;
+    }
+    get args() {
+      return this[args$];
+    }
+    set args(value) {
+      this[args$] = value;
+    }
+    ['&'](g) {
+      return new math_expressions.CompositeFunction.new(this, g);
+    }
+    getParam(i) {
+      return this.args[$_get](i);
+    }
+    getParamByName(name) {
+      return this.args[$singleWhere](dart.fn(e => e.name == name, T.VariableLToboolL()));
+    }
+    get domainDimension() {
+      return this.args[$length];
+    }
+    toString() {
+      return dart.str(this.name) + "(" + dart.str(this.args) + ")";
+    }
+    toFullString() {
+      return this.toString();
+    }
+  };
+  (math_expressions.MathFunction.new = function(name, args) {
+    this[name$0] = name;
+    this[args$] = args;
+    ;
+  }).prototype = math_expressions.MathFunction.prototype;
+  (math_expressions.MathFunction._empty = function(name) {
+    this[args$] = null;
+    this[name$0] = name;
+    ;
+  }).prototype = math_expressions.MathFunction.prototype;
+  dart.addTypeTests(math_expressions.MathFunction);
+  dart.addTypeCaches(math_expressions.MathFunction);
+  dart.setMethodSignature(math_expressions.MathFunction, () => ({
+    __proto__: dart.getMethods(math_expressions.MathFunction.__proto__),
+    '&': dart.fnType(dart.legacy(math_expressions.MathFunction), [dart.legacy(math_expressions.MathFunction)]),
+    getParam: dart.fnType(dart.legacy(math_expressions.Variable), [dart.legacy(core.int)]),
+    getParamByName: dart.fnType(dart.legacy(math_expressions.Variable), [dart.legacy(core.String)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), []),
+    toFullString: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setGetterSignature(math_expressions.MathFunction, () => ({
+    __proto__: dart.getGetters(math_expressions.MathFunction.__proto__),
+    domainDimension: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(math_expressions.MathFunction, I[0]);
+  dart.setFieldSignature(math_expressions.MathFunction, () => ({
+    __proto__: dart.getFields(math_expressions.MathFunction.__proto__),
+    name: dart.fieldType(dart.legacy(core.String)),
+    args: dart.fieldType(dart.legacy(core.List$(dart.legacy(math_expressions.Variable))))
+  }));
+  dart.defineExtensionMethods(math_expressions.MathFunction, ['toString']);
+  var f$ = dart.privateName(math_expressions, "CompositeFunction.f");
+  var g$ = dart.privateName(math_expressions, "CompositeFunction.g");
+  math_expressions.CompositeFunction = class CompositeFunction extends math_expressions.MathFunction {
+    get f() {
+      return this[f$];
+    }
+    set f(value) {
+      this[f$] = value;
+    }
+    get g() {
+      return this[g$];
+    }
+    set g(value) {
+      this[g$] = value;
+    }
+    get gDomainDimension() {
+      return this.g.domainDimension;
+    }
+    get domainDimension() {
+      return this.f.domainDimension;
+    }
+    derive(toVar) {
+      let gDF = null;
+      let gD = this.g.derive(toVar);
+      if (!T.MathFunctionL().is(gD)) {
+        gDF = new math_expressions.CustomFunction.new("d" + dart.str(this.g.name), this.g.args, gD);
+      } else {
+        gDF = T.MathFunctionL().as(gD);
+      }
+      return new math_expressions.CompositeFunction.new(this.f, gDF)['*'](this.f.derive(toVar));
+    }
+    simplify() {
+      let fSimpl = T.MathFunctionL().as(this.f.simplify());
+      let gSimpl = T.MathFunctionL().as(this.g.simplify());
+      return new math_expressions.CompositeFunction.new(fSimpl, gSimpl);
+    }
+    evaluate(type, context) {
+      let t0, t0$, t0$0;
+      let fEval = null;
+      let childScope = context.createChildScope();
+      if (this.gDomainDimension === 1) {
+        fEval = this.f.evaluate(math_expressions.EvaluationType.REAL, context);
+        childScope.bindVariable(this.g.getParam(0), this[_toExpression](fEval));
+        return this.g.evaluate(type, childScope);
+      }
+      if (this.gDomainDimension === 2) {
+        fEval = this.f.evaluate(math_expressions.EvaluationType.VECTOR, context);
+        t0 = childScope;
+        (() => {
+          t0.bindVariable(this.g.getParam(0), this[_toExpression](dart.dload(fEval, 'x')));
+          t0.bindVariable(this.g.getParam(1), this[_toExpression](dart.dload(fEval, 'y')));
+          return t0;
+        })();
+        return this.g.evaluate(type, childScope);
+      }
+      if (this.gDomainDimension === 3) {
+        fEval = this.f.evaluate(math_expressions.EvaluationType.VECTOR, context);
+        t0$ = childScope;
+        (() => {
+          t0$.bindVariable(this.g.getParam(0), this[_toExpression](dart.dload(fEval, 'x')));
+          t0$.bindVariable(this.g.getParam(1), this[_toExpression](dart.dload(fEval, 'y')));
+          t0$.bindVariable(this.g.getParam(2), this[_toExpression](dart.dload(fEval, 'z')));
+          return t0$;
+        })();
+        return this.g.evaluate(type, childScope);
+      }
+      if (this.gDomainDimension === 4) {
+        fEval = this.f.evaluate(math_expressions.EvaluationType.VECTOR, context);
+        t0$0 = childScope;
+        (() => {
+          t0$0.bindVariable(this.g.getParam(0), this[_toExpression](dart.dload(fEval, 'x')));
+          t0$0.bindVariable(this.g.getParam(1), this[_toExpression](dart.dload(fEval, 'y')));
+          t0$0.bindVariable(this.g.getParam(2), this[_toExpression](dart.dload(fEval, 'z')));
+          t0$0.bindVariable(this.g.getParam(3), this[_toExpression](dart.dload(fEval, 'w')));
+          return t0$0;
+        })();
+        return this.g.evaluate(type, childScope);
+      }
+      dart.throw(new core.UnimplementedError.new("Vectors > 4 not supported yet."));
+    }
+  };
+  (math_expressions.CompositeFunction.new = function(f, g) {
+    this[f$] = f;
+    this[g$] = g;
+    math_expressions.CompositeFunction.__proto__.new.call(this, "comp(" + dart.str(f.name) + "," + dart.str(g.name) + ")", f.args);
+    ;
+  }).prototype = math_expressions.CompositeFunction.prototype;
+  dart.addTypeTests(math_expressions.CompositeFunction);
+  dart.addTypeCaches(math_expressions.CompositeFunction);
+  dart.setMethodSignature(math_expressions.CompositeFunction, () => ({
+    __proto__: dart.getMethods(math_expressions.CompositeFunction.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setGetterSignature(math_expressions.CompositeFunction, () => ({
+    __proto__: dart.getGetters(math_expressions.CompositeFunction.__proto__),
+    gDomainDimension: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(math_expressions.CompositeFunction, I[0]);
+  dart.setFieldSignature(math_expressions.CompositeFunction, () => ({
+    __proto__: dart.getFields(math_expressions.CompositeFunction.__proto__),
+    f: dart.fieldType(dart.legacy(math_expressions.MathFunction)),
+    g: dart.fieldType(dart.legacy(math_expressions.MathFunction))
+  }));
+  var expression$ = dart.privateName(math_expressions, "CustomFunction.expression");
+  math_expressions.CustomFunction = class CustomFunction extends math_expressions.MathFunction {
+    get expression() {
+      return this[expression$];
+    }
+    set expression(value) {
+      this[expression$] = value;
+    }
+    derive(toVar) {
+      return new math_expressions.CustomFunction.new(this.name, this.args, this.expression.derive(toVar));
+    }
+    simplify() {
+      return new math_expressions.CustomFunction.new(this.name, this.args, this.expression.simplify());
+    }
+    evaluate(type, context) {
+      return this.expression.evaluate(type, context);
+    }
+    toFullString() {
+      return dart.str(this.name) + "(" + dart.str(this.args) + ") = " + dart.str(this.expression);
+    }
+  };
+  (math_expressions.CustomFunction.new = function(name, args, expression) {
+    this[expression$] = expression;
+    math_expressions.CustomFunction.__proto__.new.call(this, name, args);
+    ;
+  }).prototype = math_expressions.CustomFunction.prototype;
+  dart.addTypeTests(math_expressions.CustomFunction);
+  dart.addTypeCaches(math_expressions.CustomFunction);
+  dart.setMethodSignature(math_expressions.CustomFunction, () => ({
+    __proto__: dart.getMethods(math_expressions.CustomFunction.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setLibraryUri(math_expressions.CustomFunction, I[0]);
+  dart.setFieldSignature(math_expressions.CustomFunction, () => ({
+    __proto__: dart.getFields(math_expressions.CustomFunction.__proto__),
+    expression: dart.fieldType(dart.legacy(math_expressions.Expression))
+  }));
+  var _wrapIntoVariable = dart.privateName(math_expressions, "_wrapIntoVariable");
+  math_expressions.DefaultFunction = class DefaultFunction extends math_expressions.MathFunction {
+    [_wrapIntoVariable](e) {
+      if (T.VariableL().is(e)) {
+        return e;
+      } else {
+        return new math_expressions.BoundVariable.new(e);
+      }
+    }
+    toString() {
+      return this.args[$length] === 1 ? dart.str(this.name) + "(" + dart.str(this.args[$_get](0)) + ")" : dart.str(this.name) + "(" + dart.str(this.args[$_get](0)) + "," + dart.str(this.args[$_get](1)) + ")";
+    }
+  };
+  (math_expressions.DefaultFunction._unary = function(name, arg) {
+    math_expressions.DefaultFunction.__proto__._empty.call(this, name);
+    let bindingVariable = this[_wrapIntoVariable](arg);
+    this.args = T.JSArrayOfVariableL().of([bindingVariable]);
+  }).prototype = math_expressions.DefaultFunction.prototype;
+  (math_expressions.DefaultFunction._binary = function(name, arg1, arg2) {
+    math_expressions.DefaultFunction.__proto__._empty.call(this, name);
+    let bindingVariable1 = this[_wrapIntoVariable](arg1);
+    let bindingVariable2 = this[_wrapIntoVariable](arg2);
+    this.args = T.JSArrayOfVariableL().of([bindingVariable1, bindingVariable2]);
+  }).prototype = math_expressions.DefaultFunction.prototype;
+  dart.addTypeTests(math_expressions.DefaultFunction);
+  dart.addTypeCaches(math_expressions.DefaultFunction);
+  dart.setMethodSignature(math_expressions.DefaultFunction, () => ({
+    __proto__: dart.getMethods(math_expressions.DefaultFunction.__proto__),
+    [_wrapIntoVariable]: dart.fnType(dart.legacy(math_expressions.Variable), [dart.legacy(math_expressions.Expression)])
+  }));
+  dart.setLibraryUri(math_expressions.DefaultFunction, I[0]);
+  dart.defineExtensionMethods(math_expressions.DefaultFunction, ['toString']);
+  math_expressions.Exponential = class Exponential extends math_expressions.DefaultFunction {
+    get exp() {
+      return this.getParam(0);
+    }
+    derive(toVar) {
+      return new math_expressions.Times.new(this, this.exp.derive(toVar));
+    }
+    simplify() {
+      let expSimpl = this.exp.simplify();
+      if (dart.test(this[_isNumber](expSimpl, 0))) {
+        return new math_expressions.Number.new(1);
+      }
+      if (dart.test(this[_isNumber](expSimpl, 1))) {
+        return new math_expressions.Number.new(2.718281828459045);
+      }
+      if (T.TimesL().is(expSimpl) && T.LnL().is(expSimpl.second)) {
+        let ln = T.LnL().as(expSimpl.second);
+        return new math_expressions.Power.new(ln.arg, expSimpl.first);
+      }
+      return new math_expressions.Exponential.new(expSimpl);
+    }
+    evaluate(type, context) {
+      let expEval = this.exp.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return math.exp(core.num.as(expEval));
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.INTERVAL)) {
+        return new math_expressions.Interval.new(math.exp(core.num.as(dart.dload(expEval, 'min'))), math.exp(core.num.as(dart.dload(expEval, 'max'))));
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+  };
+  (math_expressions.Exponential.new = function(exp) {
+    math_expressions.Exponential.__proto__._unary.call(this, "exp", exp);
+    ;
+  }).prototype = math_expressions.Exponential.prototype;
+  dart.addTypeTests(math_expressions.Exponential);
+  dart.addTypeCaches(math_expressions.Exponential);
+  dart.setMethodSignature(math_expressions.Exponential, () => ({
+    __proto__: dart.getMethods(math_expressions.Exponential.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setGetterSignature(math_expressions.Exponential, () => ({
+    __proto__: dart.getGetters(math_expressions.Exponential.__proto__),
+    exp: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Exponential, I[0]);
+  math_expressions.Log = class Log extends math_expressions.DefaultFunction {
+    get base() {
+      return this.getParam(0);
+    }
+    get arg() {
+      return this.getParam(1);
+    }
+    derive(toVar) {
+      return this.asNaturalLogarithm().derive(toVar);
+    }
+    simplify() {
+      return new math_expressions.Log.new(this.base.simplify(), this.arg.simplify());
+    }
+    evaluate(type, context) {
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return this.asNaturalLogarithm().evaluate(type, context);
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.INTERVAL)) {
+        return this.asNaturalLogarithm().evaluate(type, context);
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+    toString() {
+      return "log_" + dart.str(this.base) + "(" + dart.str(this.arg) + ")";
+    }
+    asNaturalLogarithm() {
+      return new math_expressions.Ln.new(this.arg)['/'](new math_expressions.Ln.new(this.base));
+    }
+  };
+  (math_expressions.Log.new = function(base, arg) {
+    math_expressions.Log.__proto__._binary.call(this, "log", base, arg);
+    ;
+  }).prototype = math_expressions.Log.prototype;
+  (math_expressions.Log._ln = function(arg) {
+    math_expressions.Log.__proto__._binary.call(this, "ln", new math_expressions.Number.new(2.718281828459045), arg);
+    ;
+  }).prototype = math_expressions.Log.prototype;
+  dart.addTypeTests(math_expressions.Log);
+  dart.addTypeCaches(math_expressions.Log);
+  dart.setMethodSignature(math_expressions.Log, () => ({
+    __proto__: dart.getMethods(math_expressions.Log.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    asNaturalLogarithm: dart.fnType(dart.legacy(math_expressions.Expression), [])
+  }));
+  dart.setGetterSignature(math_expressions.Log, () => ({
+    __proto__: dart.getGetters(math_expressions.Log.__proto__),
+    base: dart.legacy(math_expressions.Expression),
+    arg: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Log, I[0]);
+  dart.defineExtensionMethods(math_expressions.Log, ['toString']);
+  math_expressions.Ln = class Ln extends math_expressions.Log {
+    derive(toVar) {
+      return this.arg.derive(toVar)['/'](this.arg);
+    }
+    simplify() {
+      let argSimpl = this.arg.simplify();
+      if (dart.test(this[_isNumber](argSimpl, 1))) {
+        return new math_expressions.Number.new(0);
+      }
+      return new math_expressions.Ln.new(argSimpl);
+    }
+    evaluate(type, context) {
+      let argEval = this.arg.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return math.log(core.num.as(argEval));
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.INTERVAL)) {
+        return new math_expressions.Interval.new(math.log(core.num.as(dart.dload(argEval, 'min'))), math.log(core.num.as(dart.dload(argEval, 'max'))));
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+    toString() {
+      return "ln(" + dart.str(this.arg) + ")";
+    }
+  };
+  (math_expressions.Ln.new = function(arg) {
+    math_expressions.Ln.__proto__._ln.call(this, arg);
+    ;
+  }).prototype = math_expressions.Ln.prototype;
+  dart.addTypeTests(math_expressions.Ln);
+  dart.addTypeCaches(math_expressions.Ln);
+  dart.setLibraryUri(math_expressions.Ln, I[0]);
+  dart.defineExtensionMethods(math_expressions.Ln, ['toString']);
+  var n$ = dart.privateName(math_expressions, "Root.n");
+  math_expressions.Root = class Root extends math_expressions.DefaultFunction {
+    get n() {
+      return this[n$];
+    }
+    set n(value) {
+      this[n$] = value;
+    }
+    get arg() {
+      return this.getParam(0);
+    }
+    derive(toVar) {
+      return this.asPower().derive(toVar);
+    }
+    simplify() {
+      return new math_expressions.Root.new(this.n, this.arg.simplify());
+    }
+    evaluate(type, context) {
+      return this.asPower().evaluate(type, context);
+    }
+    toString() {
+      return "nrt_" + dart.str(this.n) + "(" + dart.str(this.arg) + ")";
+    }
+    asPower() {
+      return new math_expressions.Power.new(this.arg, new math_expressions.Divide.new(new math_expressions.Number.new(1), new math_expressions.Number.new(this.n)));
+    }
+  };
+  (math_expressions.Root.new = function(n, arg) {
+    this[n$] = n;
+    math_expressions.Root.__proto__._unary.call(this, "root", arg);
+    ;
+  }).prototype = math_expressions.Root.prototype;
+  (math_expressions.Root.fromExpr = function(n, arg) {
+    this[n$] = null;
+    math_expressions.Root.__proto__._unary.call(this, "root", arg);
+    this.n = n.getConstantValue()[$toInt]();
+  }).prototype = math_expressions.Root.prototype;
+  (math_expressions.Root.sqrt = function(arg) {
+    this[n$] = 2;
+    math_expressions.Root.__proto__._unary.call(this, "sqrt", arg);
+    ;
+  }).prototype = math_expressions.Root.prototype;
+  dart.addTypeTests(math_expressions.Root);
+  dart.addTypeCaches(math_expressions.Root);
+  dart.setMethodSignature(math_expressions.Root, () => ({
+    __proto__: dart.getMethods(math_expressions.Root.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    asPower: dart.fnType(dart.legacy(math_expressions.Expression), [])
+  }));
+  dart.setGetterSignature(math_expressions.Root, () => ({
+    __proto__: dart.getGetters(math_expressions.Root.__proto__),
+    arg: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Root, I[0]);
+  dart.setFieldSignature(math_expressions.Root, () => ({
+    __proto__: dart.getFields(math_expressions.Root.__proto__),
+    n: dart.fieldType(dart.legacy(core.int))
+  }));
+  dart.defineExtensionMethods(math_expressions.Root, ['toString']);
+  math_expressions.Sqrt = class Sqrt extends math_expressions.Root {
+    simplify() {
+      let argSimpl = this.arg.simplify();
+      if (T.PowerL().is(argSimpl)) {
+        let exponent = argSimpl.second;
+        if (T.NumberL().is(exponent)) {
+          if (dart.equals(exponent.value, 2)) {
+            return argSimpl.first;
+          }
+        }
+      }
+      if (dart.test(this[_isNumber](argSimpl, 0))) {
+        return new math_expressions.Number.new(0);
+      }
+      if (dart.test(this[_isNumber](argSimpl, 1))) {
+        return new math_expressions.Number.new(1);
+      }
+      return new math_expressions.Sqrt.new(argSimpl);
+    }
+    evaluate(type, context) {
+      let argEval = this.arg.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return math.sqrt(core.num.as(argEval));
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.VECTOR)) {
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.INTERVAL)) {
+        return new math_expressions.Interval.new(math.sqrt(core.num.as(dart.dload(argEval, 'min'))), math.sqrt(core.num.as(dart.dload(argEval, 'max'))));
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+    toString() {
+      return "sqrt(" + dart.str(this.arg) + ")";
+    }
+  };
+  (math_expressions.Sqrt.new = function(arg) {
+    math_expressions.Sqrt.__proto__.sqrt.call(this, arg);
+    ;
+  }).prototype = math_expressions.Sqrt.prototype;
+  dart.addTypeTests(math_expressions.Sqrt);
+  dart.addTypeCaches(math_expressions.Sqrt);
+  dart.setLibraryUri(math_expressions.Sqrt, I[0]);
+  dart.defineExtensionMethods(math_expressions.Sqrt, ['toString']);
+  math_expressions.Sin = class Sin extends math_expressions.DefaultFunction {
+    get arg() {
+      return this.getParam(0);
+    }
+    derive(toVar) {
+      return new math_expressions.Cos.new(this.arg)['*'](this.arg.derive(toVar));
+    }
+    simplify() {
+      let argSimpl = this.arg.simplify();
+      if (dart.test(this[_isNumber](argSimpl, 0))) {
+        return new math_expressions.Number.new(0);
+      }
+      return new math_expressions.Sin.new(argSimpl);
+    }
+    evaluate(type, context) {
+      let argEval = this.arg.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return math.sin(core.num.as(argEval));
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.VECTOR)) {
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.INTERVAL)) {
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+  };
+  (math_expressions.Sin.new = function(arg) {
+    math_expressions.Sin.__proto__._unary.call(this, "sin", arg);
+    ;
+  }).prototype = math_expressions.Sin.prototype;
+  dart.addTypeTests(math_expressions.Sin);
+  dart.addTypeCaches(math_expressions.Sin);
+  dart.setMethodSignature(math_expressions.Sin, () => ({
+    __proto__: dart.getMethods(math_expressions.Sin.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setGetterSignature(math_expressions.Sin, () => ({
+    __proto__: dart.getGetters(math_expressions.Sin.__proto__),
+    arg: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Sin, I[0]);
+  math_expressions.Cos = class Cos extends math_expressions.DefaultFunction {
+    get arg() {
+      return this.getParam(0);
+    }
+    derive(toVar) {
+      return new math_expressions.Sin.new(this.arg)._negate()['*'](this.arg.derive(toVar));
+    }
+    simplify() {
+      let argSimpl = this.arg.simplify();
+      if (dart.test(this[_isNumber](argSimpl, 0))) {
+        return new math_expressions.Number.new(1);
+      }
+      return new math_expressions.Cos.new(argSimpl);
+    }
+    evaluate(type, context) {
+      let argEval = this.arg.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return math.cos(core.num.as(argEval));
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.VECTOR)) {
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.INTERVAL)) {
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+  };
+  (math_expressions.Cos.new = function(arg) {
+    math_expressions.Cos.__proto__._unary.call(this, "cos", arg);
+    ;
+  }).prototype = math_expressions.Cos.prototype;
+  dart.addTypeTests(math_expressions.Cos);
+  dart.addTypeCaches(math_expressions.Cos);
+  dart.setMethodSignature(math_expressions.Cos, () => ({
+    __proto__: dart.getMethods(math_expressions.Cos.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setGetterSignature(math_expressions.Cos, () => ({
+    __proto__: dart.getGetters(math_expressions.Cos.__proto__),
+    arg: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Cos, I[0]);
+  math_expressions.Tan = class Tan extends math_expressions.DefaultFunction {
+    get arg() {
+      return this.getParam(0);
+    }
+    derive(toVar) {
+      return this.asSinCos().derive(toVar);
+    }
+    simplify() {
+      let argSimpl = this.arg.simplify();
+      if (dart.test(this[_isNumber](argSimpl, 0))) {
+        return new math_expressions.Number.new(0);
+      }
+      return new math_expressions.Tan.new(argSimpl);
+    }
+    evaluate(type, context) {
+      let argEval = this.arg.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return math.tan(core.num.as(argEval));
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.VECTOR)) {
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+    asSinCos() {
+      return new math_expressions.Sin.new(this.arg)['/'](new math_expressions.Cos.new(this.arg));
+    }
+  };
+  (math_expressions.Tan.new = function(arg) {
+    math_expressions.Tan.__proto__._unary.call(this, "tan", arg);
+    ;
+  }).prototype = math_expressions.Tan.prototype;
+  dart.addTypeTests(math_expressions.Tan);
+  dart.addTypeCaches(math_expressions.Tan);
+  dart.setMethodSignature(math_expressions.Tan, () => ({
+    __proto__: dart.getMethods(math_expressions.Tan.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)]),
+    asSinCos: dart.fnType(dart.legacy(math_expressions.Expression), [])
+  }));
+  dart.setGetterSignature(math_expressions.Tan, () => ({
+    __proto__: dart.getGetters(math_expressions.Tan.__proto__),
+    arg: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Tan, I[0]);
+  math_expressions.Asin = class Asin extends math_expressions.DefaultFunction {
+    get arg() {
+      return this.getParam(0);
+    }
+    derive(toVar) {
+      return new math_expressions.Number.new(1)['/'](new math_expressions.Sqrt.new(new math_expressions.Number.new(1)['-'](this.arg['^'](new math_expressions.Number.new(2)))));
+    }
+    simplify() {
+      return new math_expressions.Asin.new(this.arg.simplify());
+    }
+    evaluate(type, context) {
+      let argEval = this.arg.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return math.asin(core.num.as(argEval));
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+  };
+  (math_expressions.Asin.new = function(arg) {
+    math_expressions.Asin.__proto__._unary.call(this, "arcsin", arg);
+    ;
+  }).prototype = math_expressions.Asin.prototype;
+  dart.addTypeTests(math_expressions.Asin);
+  dart.addTypeCaches(math_expressions.Asin);
+  dart.setMethodSignature(math_expressions.Asin, () => ({
+    __proto__: dart.getMethods(math_expressions.Asin.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setGetterSignature(math_expressions.Asin, () => ({
+    __proto__: dart.getGetters(math_expressions.Asin.__proto__),
+    arg: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Asin, I[0]);
+  math_expressions.Acos = class Acos extends math_expressions.DefaultFunction {
+    get arg() {
+      return this.getParam(0);
+    }
+    derive(toVar) {
+      return new math_expressions.Number.new(1)._negate()['/'](new math_expressions.Sqrt.new(new math_expressions.Number.new(1)['-'](this.arg['^'](new math_expressions.Number.new(2)))));
+    }
+    simplify() {
+      return new math_expressions.Acos.new(this.arg.simplify());
+    }
+    evaluate(type, context) {
+      let argEval = this.arg.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return math.acos(core.num.as(argEval));
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+  };
+  (math_expressions.Acos.new = function(arg) {
+    math_expressions.Acos.__proto__._unary.call(this, "arccos", arg);
+    ;
+  }).prototype = math_expressions.Acos.prototype;
+  dart.addTypeTests(math_expressions.Acos);
+  dart.addTypeCaches(math_expressions.Acos);
+  dart.setMethodSignature(math_expressions.Acos, () => ({
+    __proto__: dart.getMethods(math_expressions.Acos.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setGetterSignature(math_expressions.Acos, () => ({
+    __proto__: dart.getGetters(math_expressions.Acos.__proto__),
+    arg: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Acos, I[0]);
+  math_expressions.Atan = class Atan extends math_expressions.DefaultFunction {
+    get arg() {
+      return this.getParam(0);
+    }
+    derive(toVar) {
+      return new math_expressions.Number.new(1)['/'](new math_expressions.Number.new(1)['+'](this.arg['^'](new math_expressions.Number.new(2))));
+    }
+    simplify() {
+      return new math_expressions.Atan.new(this.arg.simplify());
+    }
+    evaluate(type, context) {
+      let argEval = this.arg.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return math.atan(core.num.as(argEval));
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+  };
+  (math_expressions.Atan.new = function(arg) {
+    math_expressions.Atan.__proto__._unary.call(this, "arctan", arg);
+    ;
+  }).prototype = math_expressions.Atan.prototype;
+  dart.addTypeTests(math_expressions.Atan);
+  dart.addTypeCaches(math_expressions.Atan);
+  dart.setMethodSignature(math_expressions.Atan, () => ({
+    __proto__: dart.getMethods(math_expressions.Atan.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setGetterSignature(math_expressions.Atan, () => ({
+    __proto__: dart.getGetters(math_expressions.Atan.__proto__),
+    arg: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Atan, I[0]);
+  math_expressions.Abs = class Abs extends math_expressions.DefaultFunction {
+    get arg() {
+      return this.getParam(0);
+    }
+    derive(toVar) {
+      return new math_expressions.Sgn.new(this.arg)['*'](this.arg.derive(toVar));
+    }
+    simplify() {
+      return new math_expressions.Abs.new(this.arg.simplify());
+    }
+    evaluate(type, context) {
+      let argEval = this.arg.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return dart.dsend(argEval, 'abs', []);
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.VECTOR)) {
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+  };
+  (math_expressions.Abs.new = function(arg) {
+    math_expressions.Abs.__proto__._unary.call(this, "abs", arg);
+    ;
+  }).prototype = math_expressions.Abs.prototype;
+  dart.addTypeTests(math_expressions.Abs);
+  dart.addTypeCaches(math_expressions.Abs);
+  dart.setMethodSignature(math_expressions.Abs, () => ({
+    __proto__: dart.getMethods(math_expressions.Abs.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setGetterSignature(math_expressions.Abs, () => ({
+    __proto__: dart.getGetters(math_expressions.Abs.__proto__),
+    arg: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Abs, I[0]);
+  math_expressions.Ceil = class Ceil extends math_expressions.DefaultFunction {
+    get arg() {
+      return this.getParam(0);
+    }
+    derive(toVar) {
+      return new math_expressions.Number.new(0);
+    }
+    simplify() {
+      let sarg = this.arg.simplify();
+      return T.FloorL().is(sarg) || T.CeilL().is(sarg) ? sarg : new math_expressions.Ceil.new(sarg);
+    }
+    evaluate(type, context) {
+      let argEval = this.arg.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return dart.dsend(dart.dsend(argEval, 'ceil', []), 'toDouble', []);
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.VECTOR)) {
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+  };
+  (math_expressions.Ceil.new = function(arg) {
+    math_expressions.Ceil.__proto__._unary.call(this, "ceil", arg);
+    ;
+  }).prototype = math_expressions.Ceil.prototype;
+  dart.addTypeTests(math_expressions.Ceil);
+  dart.addTypeCaches(math_expressions.Ceil);
+  dart.setMethodSignature(math_expressions.Ceil, () => ({
+    __proto__: dart.getMethods(math_expressions.Ceil.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setGetterSignature(math_expressions.Ceil, () => ({
+    __proto__: dart.getGetters(math_expressions.Ceil.__proto__),
+    arg: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Ceil, I[0]);
+  math_expressions.Floor = class Floor extends math_expressions.DefaultFunction {
+    get arg() {
+      return this.getParam(0);
+    }
+    derive(toVar) {
+      return new math_expressions.Number.new(0);
+    }
+    simplify() {
+      let sarg = this.arg.simplify();
+      return T.FloorL().is(sarg) || T.CeilL().is(sarg) ? sarg : new math_expressions.Floor.new(sarg);
+    }
+    evaluate(type, context) {
+      let argEval = this.arg.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        return dart.dsend(dart.dsend(argEval, 'floor', []), 'toDouble', []);
+      }
+      if (dart.equals(type, math_expressions.EvaluationType.VECTOR)) {
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+  };
+  (math_expressions.Floor.new = function(arg) {
+    math_expressions.Floor.__proto__._unary.call(this, "floor", arg);
+    ;
+  }).prototype = math_expressions.Floor.prototype;
+  dart.addTypeTests(math_expressions.Floor);
+  dart.addTypeCaches(math_expressions.Floor);
+  dart.setMethodSignature(math_expressions.Floor, () => ({
+    __proto__: dart.getMethods(math_expressions.Floor.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setGetterSignature(math_expressions.Floor, () => ({
+    __proto__: dart.getGetters(math_expressions.Floor.__proto__),
+    arg: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Floor, I[0]);
+  math_expressions.Sgn = class Sgn extends math_expressions.DefaultFunction {
+    get arg() {
+      return this.getParam(0);
+    }
+    derive(toVar) {
+      return new math_expressions.Number.new(0);
+    }
+    simplify() {
+      return new math_expressions.Sgn.new(this.arg.simplify());
+    }
+    evaluate(type, context) {
+      let argEval = this.arg.evaluate(type, context);
+      if (dart.equals(type, math_expressions.EvaluationType.REAL)) {
+        if (dart.dtest(dart.dsend(argEval, '<', [0]))) return -1.0;
+        if (dart.equals(argEval, 0)) return 0.0;
+        if (dart.dtest(dart.dsend(argEval, '>', [0]))) return 1.0;
+      }
+      dart.throw(new core.UnimplementedError.new("Can not evaluate " + dart.str(this.name) + " on " + dart.str(type) + " yet."));
+    }
+  };
+  (math_expressions.Sgn.new = function(arg) {
+    math_expressions.Sgn.__proto__._unary.call(this, "sgn", arg);
+    ;
+  }).prototype = math_expressions.Sgn.prototype;
+  dart.addTypeTests(math_expressions.Sgn);
+  dart.addTypeCaches(math_expressions.Sgn);
+  dart.setMethodSignature(math_expressions.Sgn, () => ({
+    __proto__: dart.getMethods(math_expressions.Sgn.__proto__),
+    derive: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    evaluate: dart.fnType(dart.dynamic, [dart.legacy(math_expressions.EvaluationType), dart.legacy(math_expressions.ContextModel)])
+  }));
+  dart.setGetterSignature(math_expressions.Sgn, () => ({
+    __proto__: dart.getGetters(math_expressions.Sgn.__proto__),
+    arg: dart.legacy(math_expressions.Expression)
+  }));
+  dart.setLibraryUri(math_expressions.Sgn, I[0]);
+  var lex = dart.privateName(math_expressions, "Parser.lex");
+  var TokenType_function = dart.privateName(math_expressions, "TokenType.function");
+  var TokenType_operator = dart.privateName(math_expressions, "TokenType.operator");
+  var TokenType_leftAssociative = dart.privateName(math_expressions, "TokenType.leftAssociative");
+  var TokenType_priority = dart.privateName(math_expressions, "TokenType.priority");
+  var TokenType_value = dart.privateName(math_expressions, "TokenType.value");
+  math_expressions.Parser = class Parser extends core.Object {
+    get lex() {
+      return this[lex];
+    }
+    set lex(value) {
+      super.lex = value;
+    }
+    parse(inputString) {
+      if (inputString == null || inputString[$trim]()[$isEmpty]) {
+        dart.throw(new core.ArgumentError.new("The given input string was empty."));
+      }
+      let exprStack = T.JSArrayOfExpressionL().of([]);
+      let inputStream = this.lex.tokenizeToRPN(inputString);
+      for (let currToken of inputStream) {
+        let currExpr = null;
+        let left = null;
+        let right = null;
+        switch (currToken.type) {
+          case C[0] || CT.C0:
+          {
+            currExpr = new math_expressions.Number.new(core.double.parse(currToken.text));
+            break;
+          }
+          case C[1] || CT.C1:
+          {
+            currExpr = new math_expressions.Variable.new(currToken.text);
+            break;
+          }
+          case C[2] || CT.C2:
+          {
+            currExpr = exprStack[$removeLast]()._negate();
+            break;
+          }
+          case C[3] || CT.C3:
+          {
+            right = exprStack[$removeLast]();
+            left = exprStack[$removeLast]();
+            currExpr = left['+'](right);
+            break;
+          }
+          case C[4] || CT.C4:
+          {
+            right = exprStack[$removeLast]();
+            left = exprStack[$removeLast]();
+            currExpr = left['-'](right);
+            break;
+          }
+          case C[5] || CT.C5:
+          {
+            right = exprStack[$removeLast]();
+            left = exprStack[$removeLast]();
+            currExpr = left['*'](right);
+            break;
+          }
+          case C[6] || CT.C6:
+          {
+            right = exprStack[$removeLast]();
+            left = exprStack[$removeLast]();
+            currExpr = left['/'](right);
+            break;
+          }
+          case C[7] || CT.C7:
+          {
+            right = exprStack[$removeLast]();
+            left = exprStack[$removeLast]();
+            currExpr = left['%'](right);
+            break;
+          }
+          case C[8] || CT.C8:
+          {
+            right = exprStack[$removeLast]();
+            left = exprStack[$removeLast]();
+            currExpr = left['^'](right);
+            break;
+          }
+          case C[9] || CT.C9:
+          {
+            currExpr = new math_expressions.Exponential.new(exprStack[$removeLast]());
+            break;
+          }
+          case C[10] || CT.C10:
+          {
+            right = exprStack[$removeLast]();
+            left = exprStack[$removeLast]();
+            currExpr = new math_expressions.Log.new(left, right);
+            break;
+          }
+          case C[11] || CT.C11:
+          {
+            currExpr = new math_expressions.Ln.new(exprStack[$removeLast]());
+            break;
+          }
+          case C[12] || CT.C12:
+          {
+            currExpr = new math_expressions.Sqrt.new(exprStack[$removeLast]());
+            break;
+          }
+          case C[13] || CT.C13:
+          {
+            right = exprStack[$removeLast]();
+            left = exprStack[$removeLast]();
+            currExpr = new math_expressions.Root.fromExpr(T.NumberL().as(left), right);
+            break;
+          }
+          case C[14] || CT.C14:
+          {
+            currExpr = new math_expressions.Sin.new(exprStack[$removeLast]());
+            break;
+          }
+          case C[15] || CT.C15:
+          {
+            currExpr = new math_expressions.Cos.new(exprStack[$removeLast]());
+            break;
+          }
+          case C[16] || CT.C16:
+          {
+            currExpr = new math_expressions.Tan.new(exprStack[$removeLast]());
+            break;
+          }
+          case C[17] || CT.C17:
+          {
+            currExpr = new math_expressions.Asin.new(exprStack[$removeLast]());
+            break;
+          }
+          case C[18] || CT.C18:
+          {
+            currExpr = new math_expressions.Acos.new(exprStack[$removeLast]());
+            break;
+          }
+          case C[19] || CT.C19:
+          {
+            currExpr = new math_expressions.Atan.new(exprStack[$removeLast]());
+            break;
+          }
+          case C[20] || CT.C20:
+          {
+            currExpr = new math_expressions.Abs.new(exprStack[$removeLast]());
+            break;
+          }
+          case C[21] || CT.C21:
+          {
+            currExpr = new math_expressions.Ceil.new(exprStack[$removeLast]());
+            break;
+          }
+          case C[22] || CT.C22:
+          {
+            currExpr = new math_expressions.Floor.new(exprStack[$removeLast]());
+            break;
+          }
+          case C[23] || CT.C23:
+          {
+            currExpr = new math_expressions.Sgn.new(exprStack[$removeLast]());
+            break;
+          }
+          default:
+          {
+            dart.throw(new core.ArgumentError.new("Unsupported token: " + dart.str(currToken)));
+          }
+        }
+        exprStack[$add](currExpr);
+      }
+      if (dart.notNull(exprStack[$length]) > 1) {
+        dart.throw(new core.StateError.new("The input String is not a correct expression"));
+      }
+      return exprStack[$last];
+    }
+  };
+  (math_expressions.Parser.new = function() {
+    this[lex] = new math_expressions.Lexer.new();
+    ;
+  }).prototype = math_expressions.Parser.prototype;
+  dart.addTypeTests(math_expressions.Parser);
+  dart.addTypeCaches(math_expressions.Parser);
+  dart.setMethodSignature(math_expressions.Parser, () => ({
+    __proto__: dart.getMethods(math_expressions.Parser.__proto__),
+    parse: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)])
+  }));
+  dart.setLibraryUri(math_expressions.Parser, I[0]);
+  dart.setFieldSignature(math_expressions.Parser, () => ({
+    __proto__: dart.getFields(math_expressions.Parser.__proto__),
+    lex: dart.finalFieldType(dart.legacy(math_expressions.Lexer))
+  }));
+  var keywords = dart.privateName(math_expressions, "Lexer.keywords");
+  var intBuffer = dart.privateName(math_expressions, "Lexer.intBuffer");
+  var varBuffer = dart.privateName(math_expressions, "Lexer.varBuffer");
+  var _doIntBuffer = dart.privateName(math_expressions, "_doIntBuffer");
+  var _doVarBuffer = dart.privateName(math_expressions, "_doVarBuffer");
+  math_expressions.Lexer = class Lexer extends core.Object {
+    get keywords() {
+      return this[keywords];
+    }
+    set keywords(value) {
+      super.keywords = value;
+    }
+    get intBuffer() {
+      return this[intBuffer];
+    }
+    set intBuffer(value) {
+      this[intBuffer] = value;
+    }
+    get varBuffer() {
+      return this[varBuffer];
+    }
+    set varBuffer(value) {
+      this[varBuffer] = value;
+    }
+    tokenize(inputString) {
+      let tempTokenStream = T.JSArrayOfTokenL().of([]);
+      let clearedString = inputString[$replaceAll](" ", "")[$trim]();
+      let iter = clearedString[$runes].iterator;
+      while (dart.test(iter.moveNext())) {
+        let si = iter.currentAsString;
+        if (dart.test(this.keywords[$containsKey](si))) {
+          if (this.intBuffer[$isNotEmpty]) {
+            this[_doIntBuffer](tempTokenStream);
+          }
+          if (this.varBuffer[$isNotEmpty]) {
+            this[_doVarBuffer](tempTokenStream);
+          }
+          if (dart.equals(this.keywords[$_get](si), math_expressions.TokenType.POW) && dart.equals(tempTokenStream[$last].type, math_expressions.TokenType.EFUNC)) {
+            this.varBuffer = "";
+          } else {
+            tempTokenStream[$add](new math_expressions.Token.new(si, this.keywords[$_get](si)));
+          }
+        } else {
+          let sb = new core.StringBuffer.new(this.intBuffer);
+          try {
+            core.int.parse(si);
+            sb.write(si);
+            this.intBuffer = sb.toString();
+            if (this.varBuffer[$isNotEmpty]) {
+              this[_doVarBuffer](tempTokenStream);
+            }
+          } catch (e) {
+            let ex = dart.getThrown(e);
+            if (T.FormatExceptionL().is(ex)) {
+              if (si === ".") {
+                sb.write(si);
+                this.intBuffer = sb.toString();
+                continue;
+              }
+              sb = new core.StringBuffer.new(this.varBuffer);
+              if (this.intBuffer[$isNotEmpty]) {
+                this[_doIntBuffer](tempTokenStream);
+                sb.write(si);
+                this.varBuffer = sb.toString();
+              } else {
+                sb.write(si);
+                this.varBuffer = sb.toString();
+              }
+            } else
+              throw e;
+          }
+        }
+      }
+      if (this.intBuffer[$isNotEmpty]) {
+        this[_doIntBuffer](tempTokenStream);
+      }
+      if (this.varBuffer[$isNotEmpty]) {
+        this[_doVarBuffer](tempTokenStream);
+      }
+      return tempTokenStream;
+    }
+    [_doIntBuffer](stream) {
+      stream[$add](new math_expressions.Token.new(this.intBuffer, math_expressions.TokenType.VAL));
+      this.intBuffer = "";
+    }
+    [_doVarBuffer](stream) {
+      if (dart.test(this.keywords[$containsKey](this.varBuffer))) {
+        stream[$add](new math_expressions.Token.new(this.varBuffer, this.keywords[$_get](this.varBuffer)));
+      } else {
+        stream[$add](new math_expressions.Token.new(this.varBuffer, math_expressions.TokenType.VAR));
+      }
+      this.varBuffer = "";
+    }
+    shuntingYard(stream) {
+      if (dart.test(stream[$isEmpty])) {
+        dart.throw(new core.ArgumentError.new("The given tokenStream was empty."));
+      }
+      let outputStream = T.JSArrayOfTokenL().of([]);
+      let operatorBuffer = T.JSArrayOfTokenL().of([]);
+      let prevToken = null;
+      for (let curToken of stream) {
+        if (dart.equals(curToken.type, math_expressions.TokenType.VAL) || dart.equals(curToken.type, math_expressions.TokenType.VAR)) {
+          outputStream[$add](curToken);
+          prevToken = curToken;
+          continue;
+        }
+        if (dart.test(curToken.type.function)) {
+          operatorBuffer[$add](curToken);
+          prevToken = curToken;
+          continue;
+        }
+        if (dart.equals(curToken.type, math_expressions.TokenType.SEPAR)) {
+          while (dart.test(operatorBuffer[$isNotEmpty]) && !dart.equals(operatorBuffer[$last].type, math_expressions.TokenType.LBRACE)) {
+            outputStream[$add](operatorBuffer[$removeLast]());
+          }
+          if (dart.test(operatorBuffer[$isNotEmpty]) && !dart.equals(operatorBuffer[$last].type, math_expressions.TokenType.LBRACE)) {
+            dart.throw(new core.StateError.new("Misplaced separator or mismatched parenthesis."));
+          }
+          prevToken = curToken;
+          continue;
+        }
+        if (dart.equals(curToken.type, math_expressions.TokenType.MINUS) && (prevToken == null || dart.test(prevToken.type.operator) || dart.equals(prevToken.type, math_expressions.TokenType.LBRACE))) {
+          let newToken = new math_expressions.Token.new(curToken.text, math_expressions.TokenType.UNMINUS);
+          operatorBuffer[$add](newToken);
+          prevToken = newToken;
+          continue;
+        }
+        if (dart.test(curToken.type.operator)) {
+          while (dart.test(operatorBuffer[$isNotEmpty]) && (dart.test(curToken.type.leftAssociative) && dart.notNull(curToken.type.priority) <= dart.notNull(operatorBuffer[$last].type.priority) || !dart.test(curToken.type.leftAssociative) && dart.notNull(curToken.type.priority) < dart.notNull(operatorBuffer[$last].type.priority))) {
+            outputStream[$add](operatorBuffer[$removeLast]());
+          }
+          operatorBuffer[$add](curToken);
+          prevToken = curToken;
+          continue;
+        }
+        if (dart.equals(curToken.type, math_expressions.TokenType.LBRACE)) {
+          operatorBuffer[$add](curToken);
+          prevToken = curToken;
+          continue;
+        }
+        if (dart.equals(curToken.type, math_expressions.TokenType.RBRACE)) {
+          while (dart.test(operatorBuffer[$isNotEmpty]) && !dart.equals(operatorBuffer[$last].type, math_expressions.TokenType.LBRACE)) {
+            outputStream[$add](operatorBuffer[$removeLast]());
+          }
+          if (dart.test(operatorBuffer[$isEmpty]) || !dart.equals(operatorBuffer[$removeLast]().type, math_expressions.TokenType.LBRACE)) {
+            dart.throw(new core.StateError.new("Mismatched parenthesis."));
+          }
+          if (dart.test(operatorBuffer[$isNotEmpty]) && dart.test(operatorBuffer[$last].type.function)) {
+            outputStream[$add](operatorBuffer[$removeLast]());
+          }
+        }
+        prevToken = curToken;
+      }
+      while (dart.test(operatorBuffer[$isNotEmpty])) {
+        if (dart.equals(operatorBuffer[$last].type, math_expressions.TokenType.LBRACE) || dart.equals(operatorBuffer[$last].type, math_expressions.TokenType.RBRACE)) {
+          dart.throw(new core.StateError.new("Mismatched parenthesis."));
+        }
+        outputStream[$add](operatorBuffer[$removeLast]());
+      }
+      return outputStream;
+    }
+    tokenizeToRPN(inputString) {
+      let infixStream = this.tokenize(inputString);
+      return this.shuntingYard(infixStream);
+    }
+  };
+  (math_expressions.Lexer.new = function() {
+    this[keywords] = new (T.IdentityMapOfStringL$TokenTypeL()).new();
+    this[intBuffer] = "";
+    this[varBuffer] = "";
+    this.keywords[$_set]("+", math_expressions.TokenType.PLUS);
+    this.keywords[$_set]("-", math_expressions.TokenType.MINUS);
+    this.keywords[$_set]("_", math_expressions.TokenType.UNMINUS);
+    this.keywords[$_set]("*", math_expressions.TokenType.TIMES);
+    this.keywords[$_set]("/", math_expressions.TokenType.DIV);
+    this.keywords[$_set]("%", math_expressions.TokenType.MOD);
+    this.keywords[$_set]("^", math_expressions.TokenType.POW);
+    this.keywords[$_set]("nrt", math_expressions.TokenType.ROOT);
+    this.keywords[$_set]("sqrt", math_expressions.TokenType.SQRT);
+    this.keywords[$_set]("log", math_expressions.TokenType.LOG);
+    this.keywords[$_set]("cos", math_expressions.TokenType.COS);
+    this.keywords[$_set]("sin", math_expressions.TokenType.SIN);
+    this.keywords[$_set]("tan", math_expressions.TokenType.TAN);
+    this.keywords[$_set]("arccos", math_expressions.TokenType.ACOS);
+    this.keywords[$_set]("arcsin", math_expressions.TokenType.ASIN);
+    this.keywords[$_set]("arctan", math_expressions.TokenType.ATAN);
+    this.keywords[$_set]("abs", math_expressions.TokenType.ABS);
+    this.keywords[$_set]("ceil", math_expressions.TokenType.CEIL);
+    this.keywords[$_set]("floor", math_expressions.TokenType.FLOOR);
+    this.keywords[$_set]("sgn", math_expressions.TokenType.SGN);
+    this.keywords[$_set]("ln", math_expressions.TokenType.LN);
+    this.keywords[$_set]("e", math_expressions.TokenType.EFUNC);
+    this.keywords[$_set]("(", math_expressions.TokenType.LBRACE);
+    this.keywords[$_set](")", math_expressions.TokenType.RBRACE);
+    this.keywords[$_set]("{", math_expressions.TokenType.LBRACE);
+    this.keywords[$_set]("}", math_expressions.TokenType.RBRACE);
+    this.keywords[$_set](",", math_expressions.TokenType.SEPAR);
+  }).prototype = math_expressions.Lexer.prototype;
+  dart.addTypeTests(math_expressions.Lexer);
+  dart.addTypeCaches(math_expressions.Lexer);
+  dart.setMethodSignature(math_expressions.Lexer, () => ({
+    __proto__: dart.getMethods(math_expressions.Lexer.__proto__),
+    tokenize: dart.fnType(dart.legacy(core.List$(dart.legacy(math_expressions.Token))), [dart.legacy(core.String)]),
+    [_doIntBuffer]: dart.fnType(dart.void, [dart.legacy(core.List$(dart.legacy(math_expressions.Token)))]),
+    [_doVarBuffer]: dart.fnType(dart.void, [dart.legacy(core.List$(dart.legacy(math_expressions.Token)))]),
+    shuntingYard: dart.fnType(dart.legacy(core.List$(dart.legacy(math_expressions.Token))), [dart.legacy(core.List$(dart.legacy(math_expressions.Token)))]),
+    tokenizeToRPN: dart.fnType(dart.legacy(core.List$(dart.legacy(math_expressions.Token))), [dart.legacy(core.String)])
+  }));
+  dart.setLibraryUri(math_expressions.Lexer, I[0]);
+  dart.setFieldSignature(math_expressions.Lexer, () => ({
+    __proto__: dart.getFields(math_expressions.Lexer.__proto__),
+    keywords: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(math_expressions.TokenType)))),
+    intBuffer: dart.fieldType(dart.legacy(core.String)),
+    varBuffer: dart.fieldType(dart.legacy(core.String))
+  }));
+  var text$ = dart.privateName(math_expressions, "Token.text");
+  var type$ = dart.privateName(math_expressions, "Token.type");
+  math_expressions.Token = class Token extends core.Object {
+    get text() {
+      return this[text$];
+    }
+    set text(value) {
+      super.text = value;
+    }
+    get type() {
+      return this[type$];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    _equals(token) {
+      if (token == null) return false;
+      return T.TokenL().is(token) && token.text == this.text && dart.equals(token.type, this.type);
+    }
+    get hashCode() {
+      let result = 17;
+      result = 37 * result + dart.hashCode(this.text);
+      result = 37 * result + dart.notNull(dart.hashCode(this.type));
+      return result;
+    }
+    toString() {
+      return "(" + dart.str(this.type) + ": " + dart.str(this.text) + ")";
+    }
+  };
+  (math_expressions.Token.new = function(text, type) {
+    this[text$] = text;
+    this[type$] = type;
+    ;
+  }).prototype = math_expressions.Token.prototype;
+  dart.addTypeTests(math_expressions.Token);
+  dart.addTypeCaches(math_expressions.Token);
+  dart.setMethodSignature(math_expressions.Token, () => ({
+    __proto__: dart.getMethods(math_expressions.Token.__proto__),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setGetterSignature(math_expressions.Token, () => ({
+    __proto__: dart.getGetters(math_expressions.Token.__proto__),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(math_expressions.Token, I[0]);
+  dart.setFieldSignature(math_expressions.Token, () => ({
+    __proto__: dart.getFields(math_expressions.Token.__proto__),
+    text: dart.finalFieldType(dart.legacy(core.String)),
+    type: dart.finalFieldType(dart.legacy(math_expressions.TokenType))
+  }));
+  dart.defineExtensionMethods(math_expressions.Token, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(math_expressions.Token, ['hashCode']);
+  const value$0 = TokenType_value;
+  const priority$ = TokenType_priority;
+  const leftAssociative$ = TokenType_leftAssociative;
+  const operator$ = TokenType_operator;
+  const $function$ = TokenType_function;
+  math_expressions.TokenType = class TokenType extends core.Object {
+    get value() {
+      return this[value$0];
+    }
+    set value(value) {
+      super.value = value;
+    }
+    get priority() {
+      return this[priority$];
+    }
+    set priority(value) {
+      super.priority = value;
+    }
+    get leftAssociative() {
+      return this[leftAssociative$];
+    }
+    set leftAssociative(value) {
+      super.leftAssociative = value;
+    }
+    get operator() {
+      return this[operator$];
+    }
+    set operator(value) {
+      super.operator = value;
+    }
+    get function() {
+      return this[$function$];
+    }
+    set function(value) {
+      super.function = value;
+    }
+    toString() {
+      return this.value;
+    }
+  };
+  (math_expressions.TokenType._internal = function(value, priority, opts) {
+    let leftAssociative = opts && 'leftAssociative' in opts ? opts.leftAssociative : true;
+    let operator = opts && 'operator' in opts ? opts.operator : false;
+    let $function = opts && 'function' in opts ? opts.function : false;
+    this[value$0] = value;
+    this[priority$] = priority;
+    this[leftAssociative$] = leftAssociative;
+    this[operator$] = operator;
+    this[$function$] = $function;
+    ;
+  }).prototype = math_expressions.TokenType.prototype;
+  dart.addTypeTests(math_expressions.TokenType);
+  dart.addTypeCaches(math_expressions.TokenType);
+  dart.setMethodSignature(math_expressions.TokenType, () => ({
+    __proto__: dart.getMethods(math_expressions.TokenType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(math_expressions.TokenType, I[0]);
+  dart.setFieldSignature(math_expressions.TokenType, () => ({
+    __proto__: dart.getFields(math_expressions.TokenType.__proto__),
+    value: dart.finalFieldType(dart.legacy(core.String)),
+    priority: dart.finalFieldType(dart.legacy(core.int)),
+    leftAssociative: dart.finalFieldType(dart.legacy(core.bool)),
+    operator: dart.finalFieldType(dart.legacy(core.bool)),
+    function: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  dart.defineExtensionMethods(math_expressions.TokenType, ['toString']);
+  dart.defineLazy(math_expressions.TokenType, {
+    /*math_expressions.TokenType.VAR*/get VAR() {
+      return C[1] || CT.C1;
+    },
+    /*math_expressions.TokenType.VAL*/get VAL() {
+      return C[0] || CT.C0;
+    },
+    /*math_expressions.TokenType.LBRACE*/get LBRACE() {
+      return C[24] || CT.C24;
+    },
+    /*math_expressions.TokenType.RBRACE*/get RBRACE() {
+      return C[25] || CT.C25;
+    },
+    /*math_expressions.TokenType.SEPAR*/get SEPAR() {
+      return C[26] || CT.C26;
+    },
+    /*math_expressions.TokenType.PLUS*/get PLUS() {
+      return C[3] || CT.C3;
+    },
+    /*math_expressions.TokenType.MINUS*/get MINUS() {
+      return C[4] || CT.C4;
+    },
+    /*math_expressions.TokenType.TIMES*/get TIMES() {
+      return C[5] || CT.C5;
+    },
+    /*math_expressions.TokenType.DIV*/get DIV() {
+      return C[6] || CT.C6;
+    },
+    /*math_expressions.TokenType.MOD*/get MOD() {
+      return C[7] || CT.C7;
+    },
+    /*math_expressions.TokenType.POW*/get POW() {
+      return C[8] || CT.C8;
+    },
+    /*math_expressions.TokenType.UNMINUS*/get UNMINUS() {
+      return C[2] || CT.C2;
+    },
+    /*math_expressions.TokenType.SQRT*/get SQRT() {
+      return C[12] || CT.C12;
+    },
+    /*math_expressions.TokenType.ROOT*/get ROOT() {
+      return C[13] || CT.C13;
+    },
+    /*math_expressions.TokenType.LOG*/get LOG() {
+      return C[10] || CT.C10;
+    },
+    /*math_expressions.TokenType.LN*/get LN() {
+      return C[11] || CT.C11;
+    },
+    /*math_expressions.TokenType.COS*/get COS() {
+      return C[15] || CT.C15;
+    },
+    /*math_expressions.TokenType.SIN*/get SIN() {
+      return C[14] || CT.C14;
+    },
+    /*math_expressions.TokenType.TAN*/get TAN() {
+      return C[16] || CT.C16;
+    },
+    /*math_expressions.TokenType.ACOS*/get ACOS() {
+      return C[18] || CT.C18;
+    },
+    /*math_expressions.TokenType.ASIN*/get ASIN() {
+      return C[17] || CT.C17;
+    },
+    /*math_expressions.TokenType.ATAN*/get ATAN() {
+      return C[19] || CT.C19;
+    },
+    /*math_expressions.TokenType.ABS*/get ABS() {
+      return C[20] || CT.C20;
+    },
+    /*math_expressions.TokenType.CEIL*/get CEIL() {
+      return C[21] || CT.C21;
+    },
+    /*math_expressions.TokenType.FLOOR*/get FLOOR() {
+      return C[22] || CT.C22;
+    },
+    /*math_expressions.TokenType.SGN*/get SGN() {
+      return C[23] || CT.C23;
+    },
+    /*math_expressions.TokenType.EFUNC*/get EFUNC() {
+      return C[9] || CT.C9;
+    }
+  }, true);
+  var type$0 = dart.privateName(math_expressions, "EvaluationType.type");
+  var _text$ = dart.privateName(math_expressions, "_text");
+  math_expressions.EvaluationType = class EvaluationType extends core.Object {
+    get type() {
+      return this[type$0];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    static new(type, text) {
+      math_expressions.EvaluationType._cache == null ? math_expressions.EvaluationType._cache = new (T.IdentityMapOfintL$EvaluationTypeL()).new() : null;
+      if (dart.test(math_expressions.EvaluationType._cache[$containsKey](type))) {
+        return math_expressions.EvaluationType._cache[$_get](type);
+      } else {
+        let et = new math_expressions.EvaluationType._internal(type, text);
+        math_expressions.EvaluationType._cache[$_set](type, et);
+        return et;
+      }
+    }
+    static get REAL() {
+      return math_expressions.EvaluationType.new(math_expressions.EvaluationType.REAL_INT, "REAL");
+    }
+    static get VECTOR() {
+      return math_expressions.EvaluationType.new(math_expressions.EvaluationType.VECTOR_INT, "VECTOR");
+    }
+    static get INTERVAL() {
+      return math_expressions.EvaluationType.new(math_expressions.EvaluationType.INTERVAL_INT, "INTERVAL");
+    }
+    _equals(et) {
+      if (et == null) return false;
+      return T.EvaluationTypeL().is(et) && this.type == et.type;
+    }
+    get hashCode() {
+      return dart.hashCode(this.type);
+    }
+    toString() {
+      return "Type[" + dart.str(this[_text$]) + "]";
+    }
+  };
+  (math_expressions.EvaluationType._internal = function(type, _text) {
+    this[type$0] = type;
+    this[_text$] = _text;
+    ;
+  }).prototype = math_expressions.EvaluationType.prototype;
+  dart.addTypeTests(math_expressions.EvaluationType);
+  dart.addTypeCaches(math_expressions.EvaluationType);
+  dart.setMethodSignature(math_expressions.EvaluationType, () => ({
+    __proto__: dart.getMethods(math_expressions.EvaluationType.__proto__),
+    _equals: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    [$_equals]: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.Object)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setGetterSignature(math_expressions.EvaluationType, () => ({
+    __proto__: dart.getGetters(math_expressions.EvaluationType.__proto__),
+    hashCode: dart.legacy(core.int),
+    [$hashCode]: dart.legacy(core.int)
+  }));
+  dart.setLibraryUri(math_expressions.EvaluationType, I[0]);
+  dart.setFieldSignature(math_expressions.EvaluationType, () => ({
+    __proto__: dart.getFields(math_expressions.EvaluationType.__proto__),
+    type: dart.finalFieldType(dart.legacy(core.int)),
+    [_text$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(math_expressions.EvaluationType, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(math_expressions.EvaluationType, ['hashCode']);
+  dart.defineLazy(math_expressions.EvaluationType, {
+    /*math_expressions.EvaluationType._cache*/get _cache() {
+      return null;
+    },
+    set _cache(_) {},
+    /*math_expressions.EvaluationType.REAL_INT*/get REAL_INT() {
+      return 1;
+    },
+    /*math_expressions.EvaluationType.VECTOR_INT*/get VECTOR_INT() {
+      return 2;
+    },
+    /*math_expressions.EvaluationType.INTERVAL_INT*/get INTERVAL_INT() {
+      return 3;
+    }
+  }, true);
+  var parentScope$ = dart.privateName(math_expressions, "ContextModel.parentScope");
+  var variables = dart.privateName(math_expressions, "ContextModel.variables");
+  var functions = dart.privateName(math_expressions, "ContextModel.functions");
+  math_expressions.ContextModel = class ContextModel extends core.Object {
+    get parentScope() {
+      return this[parentScope$];
+    }
+    set parentScope(value) {
+      this[parentScope$] = value;
+    }
+    get variables() {
+      return this[variables];
+    }
+    set variables(value) {
+      this[variables] = value;
+    }
+    get functions() {
+      return this[functions];
+    }
+    set functions(value) {
+      this[functions] = value;
+    }
+    createChildScope() {
+      return new math_expressions.ContextModel._child(this);
+    }
+    getExpression(varName) {
+      if (dart.test(this.variables[$containsKey](varName))) {
+        return this.variables[$_get](varName);
+      } else if (this.parentScope != null) {
+        return this.parentScope.getExpression(varName);
+      } else {
+        dart.throw(new core.StateError.new("Variable not bound: " + dart.str(varName)));
+      }
+    }
+    getFunction(name) {
+      let candidates = this.functions[$where](dart.fn(mathFunction => mathFunction.name == name, T.MathFunctionLToboolL()));
+      if (dart.test(candidates[$isNotEmpty])) {
+        return candidates[$first];
+      } else if (this.parentScope != null) {
+        return this.parentScope.getFunction(name);
+      } else {
+        dart.throw(new core.StateError.new("Function not bound: " + dart.str(name)));
+      }
+    }
+    bindVariable(v, e) {
+      this.variables[$_set](v.name, e);
+    }
+    bindVariableName(vName, e) {
+      this.variables[$_set](vName, e);
+    }
+    bindFunction(f) {
+      this.functions.add(f);
+    }
+    toString() {
+      return "ContextModel[" + "PARENT: " + dart.str(this.parentScope) + ", " + "VARS: " + dart.str(dart.toString(this.variables)) + ", " + "FUNCS: " + dart.str(dart.toString(this.functions)) + "]";
+    }
+  };
+  (math_expressions.ContextModel.new = function() {
+    this[variables] = new (T.IdentityMapOfStringL$ExpressionL()).new();
+    this[functions] = new (T._HashSetOfMathFunctionL()).new();
+    this[parentScope$] = null;
+    ;
+  }).prototype = math_expressions.ContextModel.prototype;
+  (math_expressions.ContextModel._child = function(parentScope) {
+    this[variables] = new (T.IdentityMapOfStringL$ExpressionL()).new();
+    this[functions] = new (T._HashSetOfMathFunctionL()).new();
+    this[parentScope$] = parentScope;
+    ;
+  }).prototype = math_expressions.ContextModel.prototype;
+  dart.addTypeTests(math_expressions.ContextModel);
+  dart.addTypeCaches(math_expressions.ContextModel);
+  dart.setMethodSignature(math_expressions.ContextModel, () => ({
+    __proto__: dart.getMethods(math_expressions.ContextModel.__proto__),
+    createChildScope: dart.fnType(dart.legacy(math_expressions.ContextModel), []),
+    getExpression: dart.fnType(dart.legacy(math_expressions.Expression), [dart.legacy(core.String)]),
+    getFunction: dart.fnType(dart.legacy(math_expressions.MathFunction), [dart.legacy(core.String)]),
+    bindVariable: dart.fnType(dart.void, [dart.legacy(math_expressions.Variable), dart.legacy(math_expressions.Expression)]),
+    bindVariableName: dart.fnType(dart.void, [dart.legacy(core.String), dart.legacy(math_expressions.Expression)]),
+    bindFunction: dart.fnType(dart.void, [dart.legacy(math_expressions.MathFunction)]),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(math_expressions.ContextModel, I[0]);
+  dart.setFieldSignature(math_expressions.ContextModel, () => ({
+    __proto__: dart.getFields(math_expressions.ContextModel.__proto__),
+    parentScope: dart.fieldType(dart.legacy(math_expressions.ContextModel)),
+    variables: dart.fieldType(dart.legacy(core.Map$(dart.legacy(core.String), dart.legacy(math_expressions.Expression)))),
+    functions: dart.fieldType(dart.legacy(core.Set$(dart.legacy(math_expressions.MathFunction))))
+  }));
+  dart.defineExtensionMethods(math_expressions.ContextModel, ['toString']);
+  dart.trackLibraries("packages/math_expressions/math_expressions.dart", {
+    "package:math_expressions/math_expressions.dart": math_expressions
+  }, {
+    "package:math_expressions/math_expressions.dart": ["src/algebra.dart", "src/expression.dart", "src/functions.dart", "src/parser.dart", "src/evaluator.dart"]
+  }, '{"version":3,"sourceRoot":"","sources":["src/algebra.dart","src/expression.dart","src/functions.dart","src/parser.dart","src/evaluator.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../packages/math_expressions/math_expressions.dart.lib.js"}');
+  // Exports:
+  return {
+    math_expressions: math_expressions
+  };
+}));
+
+//# sourceMappingURL=math_expressions.dart.lib.js.map

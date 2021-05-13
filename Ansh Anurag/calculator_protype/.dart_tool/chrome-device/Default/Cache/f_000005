@@ -1,0 +1,860 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/math_expressions/math_expressions.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/widgets/single_child_scroll_view.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/scientific_calculator/keyboard.dart', 'packages/scientific_calculator/constants.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/painting/strut_style.dart'], (function load__packages__scientific_calculator__scientificCalculator_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__math_expressions__math_expressions$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__widgets__single_child_scroll_view$46dart, packages__flutter__src__rendering__flex$46dart, packages__scientific_calculator__keyboard$46dart, packages__scientific_calculator__constants$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__painting__strut_style$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const text$ = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const math_expressions = packages__math_expressions__math_expressions$46dart.math_expressions;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const single_child_scroll_view = packages__flutter__src__widgets__single_child_scroll_view$46dart.src__widgets__single_child_scroll_view;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const keyboard = packages__scientific_calculator__keyboard$46dart.keyboard;
+  const constants = packages__scientific_calculator__constants$46dart.constants;
+  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  var scientificCalculator = Object.create(dart.library);
+  var $substring = dartx.substring;
+  var $toString = dartx.toString;
+  var $endsWith = dartx.endsWith;
+  var $replaceAll = dartx.replaceAll;
+  var $contains = dartx.contains;
+  var $_get = dartx._get;
+  var $toStringAsFixed = dartx.toStringAsFixed;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    doubleL: () => (T.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    doubleN: () => (T.doubleN = dart.constFn(dart.nullable(core.double)))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 21,
+        [_Location_line]: 245,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 245,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 245,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "centerTitle",
+        [_Location_column]: 9,
+        [_Location_line]: 246,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "elevation",
+        [_Location_column]: 9,
+        [_Location_line]: 247,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7], T._LocationL());
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 244,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([], T._LocationL());
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 252,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 22,
+        [_Location_line]: 252,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12], T._LocationL());
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 252,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 264,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 267,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 270,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 25,
+        [_Location_line]: 259,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 25,
+        [_Location_line]: 260,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19], T._LocationL());
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 258,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 280,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 25,
+        [_Location_line]: 274,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 25,
+        [_Location_line]: 275,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 25,
+        [_Location_line]: 276,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24, C[25] || CT.C25], T._LocationL());
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 273,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 257,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.constList([C[28] || CT.C28], T._LocationL());
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 256,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 15,
+        [_Location_line]: 254,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 15,
+        [_Location_line]: 255,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 256,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.constList([C[31] || CT.C31, C[32] || CT.C32, C[33] || CT.C33], T._LocationL());
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[30] || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 253,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "keyboardSigns",
+        [_Location_column]: 15,
+        [_Location_line]: 286,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 15,
+        [_Location_line]: 289,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36, C[37] || CT.C37], T._LocationL());
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 285,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 11,
+        [_Location_line]: 251,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.constList([C[40] || CT.C40], T._LocationL());
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[39] || CT.C39,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 250,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 250,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.constList([C[43] || CT.C43], T._LocationL());
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[42] || CT.C42,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 249,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 244,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 249,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.constList([C[46] || CT.C46, C[47] || CT.C47], T._LocationL());
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[45] || CT.C45,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 243,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 24,
+        [_Location_line]: 302,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 9,
+        [_Location_line]: 303,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 9,
+        [_Location_line]: 307,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.constList([C[50] || CT.C50, C[51] || CT.C51, C[52] || CT.C52], T._LocationL());
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[49] || CT.C49,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 301,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "reverse",
+        [_Location_column]: 7,
+        [_Location_line]: 299,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "scrollDirection",
+        [_Location_column]: 7,
+        [_Location_line]: 300,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 301,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.constList([C[55] || CT.C55, C[56] || CT.C56, C[57] || CT.C57], T._LocationL());
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[54] || CT.C54,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 298,
+        [_Location_file]: "file:///C:/Users/ansha/Documents/scientific_calculator/lib/scientificCalculator.dart"
+      });
+    }
+  }, false);
+  var C = Array(58).fill(void 0);
+  var I = ["package:scientific_calculator/scientificCalculator.dart"];
+  scientificCalculator.ScientificCalculator = class ScientificCalculator extends framework.StatefulWidget {
+    createState() {
+      return new scientificCalculator._ScientificCalculatorState.new();
+    }
+  };
+  (scientificCalculator.ScientificCalculator.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    scientificCalculator.ScientificCalculator.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = scientificCalculator.ScientificCalculator.prototype;
+  dart.addTypeTests(scientificCalculator.ScientificCalculator);
+  dart.addTypeCaches(scientificCalculator.ScientificCalculator);
+  dart.setMethodSignature(scientificCalculator.ScientificCalculator, () => ({
+    __proto__: dart.getMethods(scientificCalculator.ScientificCalculator.__proto__),
+    createState: dart.fnType(dart.legacy(scientificCalculator._ScientificCalculatorState), [])
+  }));
+  dart.setLibraryUri(scientificCalculator.ScientificCalculator, I[0]);
+  var _clear = dart.privateName(scientificCalculator, "_clear");
+  var _scientificResult = dart.privateName(scientificCalculator, "_scientificResult");
+  var _simpleResult = dart.privateName(scientificCalculator, "_simpleResult");
+  var _scientificOperands = dart.privateName(scientificCalculator, "_scientificOperands");
+  var _simpleOperands = dart.privateName(scientificCalculator, "_simpleOperands");
+  var _onPressed = dart.privateName(scientificCalculator, "_onPressed");
+  var _isIntResult = dart.privateName(scientificCalculator, "_isIntResult");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _inOutExpression = dart.privateName(scientificCalculator, "_inOutExpression");
+  scientificCalculator._ScientificCalculatorState = class _ScientificCalculatorState extends framework.State$(dart.legacy(scientificCalculator.ScientificCalculator)) {
+    initState() {
+      super.initState();
+      this.initialise();
+    }
+    initialise() {
+    }
+    [_onPressed](opts) {
+      let buttonText = opts && 'buttonText' in opts ? opts.buttonText : null;
+      switch (buttonText) {
+        case "⌞⌝":
+        {
+          this.setState(dart.fn(() => {
+            this.scientificKeyboard = !dart.test(this.scientificKeyboard);
+            this[_clear]();
+          }, T.VoidToNull()));
+          break;
+        }
+        case "AC":
+        {
+          this.setState(dart.fn(() => {
+            this[_clear]();
+          }, T.VoidToNull()));
+          break;
+        }
+        case "⌫":
+        {
+          this.setState(dart.fn(() => {
+            if (dart.test(this.scientificKeyboard)) {
+              this.equationFontSize = 35.0;
+              this.resultFontSize = 25.0;
+              scientificCalculator.equation = scientificCalculator.equation[$substring](0, scientificCalculator.equation.length - 1);
+              if (scientificCalculator.equation === "") scientificCalculator.equation = "0";
+            } else {
+              this.equationFontSize = 35.0;
+              this.resultFontSize = 25.0;
+              if (scientificCalculator.operators === "") {
+                scientificCalculator.firstOperand = scientificCalculator.firstOperand[$substring](0, scientificCalculator.firstOperand.length - 1);
+                if (scientificCalculator.firstOperand === "") scientificCalculator.firstOperand = "0";
+              } else {
+                scientificCalculator.secondOperand = scientificCalculator.secondOperand[$substring](0, scientificCalculator.secondOperand.length - 1);
+                if (scientificCalculator.secondOperand === "") scientificCalculator.secondOperand = "";
+              }
+            }
+          }, T.VoidToNull()));
+          break;
+        }
+        case "=":
+        {
+          if (scientificCalculator.result === "") {
+            dart.test(this.scientificKeyboard) ? this[_scientificResult]() : this[_simpleResult]();
+          }
+          break;
+        }
+        default:
+        {
+          dart.test(this.scientificKeyboard) ? this[_scientificOperands](buttonText) : this[_simpleOperands](buttonText);
+        }
+      }
+    }
+    [_clear]() {
+      scientificCalculator.firstOperand = "0";
+      scientificCalculator.secondOperand = "";
+      scientificCalculator.operators = "";
+      scientificCalculator.equation = "0";
+      scientificCalculator.result = "";
+      this.expression = "";
+      this.equationFontSize = 35.0;
+      this.resultFontSize = 25.0;
+    }
+    [_simpleOperands](value) {
+      this.setState(dart.fn(() => {
+        this.equationFontSize = 35.0;
+        this.resultFontSize = 25.0;
+        switch (value) {
+          case "%":
+          {
+            if (scientificCalculator.result !== "") {
+              scientificCalculator.firstOperand = (dart.notNull(core.double.parse(scientificCalculator.result)) / 100)[$toString]();
+            } else if (scientificCalculator.operators !== "") {
+              if (scientificCalculator.secondOperand !== "") {
+                if (scientificCalculator.operators === "+" || scientificCalculator.operators === "-") {
+                  scientificCalculator.secondOperand = (dart.notNull(core.double.parse(scientificCalculator.firstOperand)) / 100 * dart.notNull(core.double.parse(scientificCalculator.secondOperand)))[$toString]();
+                } else if (scientificCalculator.operators === "×" || scientificCalculator.operators === "÷") {
+                  scientificCalculator.secondOperand = (dart.notNull(core.double.parse(scientificCalculator.secondOperand)) / 100)[$toString]();
+                }
+              }
+            } else {
+              if (scientificCalculator.firstOperand !== "") {
+                scientificCalculator.firstOperand = (dart.notNull(core.double.parse(scientificCalculator.firstOperand)) / 100)[$toString]();
+              }
+            }
+            if (dart.toString(scientificCalculator.firstOperand)[$endsWith](".0")) {
+              scientificCalculator.firstOperand = dart.toString(core.int.parse(dart.toString(scientificCalculator.firstOperand)[$replaceAll](".0", "")));
+            }
+            if (dart.toString(scientificCalculator.secondOperand)[$endsWith](".0")) {
+              scientificCalculator.secondOperand = dart.toString(core.int.parse(dart.toString(scientificCalculator.secondOperand)[$replaceAll](".0", "")));
+            }
+            break;
+          }
+          case ".":
+          {
+            if (scientificCalculator.result !== "") this[_clear]();
+            if (scientificCalculator.operators !== "") {
+              if (!dart.toString(scientificCalculator.secondOperand)[$contains](".")) {
+                if (scientificCalculator.secondOperand === "") {
+                  scientificCalculator.secondOperand = ".";
+                } else {
+                  scientificCalculator.secondOperand = dart.notNull(scientificCalculator.secondOperand) + ".";
+                }
+              }
+            } else {
+              if (!dart.toString(scientificCalculator.firstOperand)[$contains](".")) {
+                if (scientificCalculator.firstOperand === "") {
+                  scientificCalculator.firstOperand = ".";
+                } else {
+                  scientificCalculator.firstOperand = dart.notNull(scientificCalculator.firstOperand) + ".";
+                }
+              }
+            }
+            break;
+          }
+          case "+":
+          case "-":
+          case "×":
+          case "÷":
+          {
+            if (scientificCalculator.firstOperand === "0") {
+              if (dart.equals(value, "-")) scientificCalculator.firstOperand = "-";
+            } else if (scientificCalculator.secondOperand === "") {
+              scientificCalculator.operators = T.StringL().as(value);
+            } else {
+              this[_simpleResult]();
+              scientificCalculator.firstOperand = scientificCalculator.result;
+              scientificCalculator.operators = T.StringL().as(value);
+              scientificCalculator.secondOperand = "";
+              scientificCalculator.result = "";
+            }
+            break;
+          }
+          default:
+          {
+            if (scientificCalculator.operators !== "") {
+              scientificCalculator.secondOperand = dart.notNull(scientificCalculator.secondOperand) + dart.notNull(T.StringL().as(value));
+            } else {
+              scientificCalculator.firstOperand === "0" ? scientificCalculator.firstOperand = T.StringL().as(value) : scientificCalculator.firstOperand = dart.notNull(scientificCalculator.firstOperand) + dart.notNull(T.StringL().as(value));
+            }
+          }
+        }
+      }, T.VoidToNull()));
+    }
+    [_simpleResult]() {
+      this.setState(dart.fn(() => {
+        this.equationFontSize = 25.0;
+        this.resultFontSize = 35.0;
+        this.expression = dart.notNull(scientificCalculator.firstOperand) + dart.notNull(scientificCalculator.operators) + dart.notNull(scientificCalculator.secondOperand);
+        this.expression = this.expression[$replaceAll]("×", "*");
+        this.expression = this.expression[$replaceAll]("÷", "/");
+        try {
+          let p = new math_expressions.Parser.new();
+          let exp = p.parse(this.expression);
+          let cm = new math_expressions.ContextModel.new();
+          scientificCalculator.result = dart.str(exp.evaluate(math_expressions.EvaluationType.REAL, cm));
+          if (scientificCalculator.result === "NaN") scientificCalculator.result = "Error";
+          this[_isIntResult]();
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          scientificCalculator.result = "Error";
+        }
+      }, T.VoidToNull()));
+    }
+    [_scientificOperands](value) {
+      this.setState(dart.fn(() => {
+        this.equationFontSize = 35.0;
+        this.resultFontSize = 25.0;
+        if (dart.equals(value, "X^")) value = "^";
+        if (dart.equals(value, "%")) value = " mód ";
+        if (dart.equals(value, "asin")) value = "arcsin";
+        if (dart.equals(value, "acos")) value = "arccos";
+        if (dart.equals(value, "atan")) value = "arctan";
+        if (dart.equals(value, ".")) {
+          if (scientificCalculator.equation[$_get](scientificCalculator.equation.length - 1) === ".") return;
+        }
+        scientificCalculator.equation === "0" ? scientificCalculator.equation = T.StringL().as(value) : scientificCalculator.equation = dart.notNull(scientificCalculator.equation) + dart.notNull(T.StringL().as(value));
+      }, T.VoidToNull()));
+    }
+    [_scientificResult]() {
+      this.setState(dart.fn(() => {
+        this.equationFontSize = 25.0;
+        this.resultFontSize = 35.0;
+        this.expression = scientificCalculator.equation;
+        this.expression = this.expression[$replaceAll]("×", "*");
+        this.expression = this.expression[$replaceAll]("÷", "/");
+        this.expression = this.expression[$replaceAll]("π", "3.1415926535897932");
+        this.expression = this.expression[$replaceAll]("e", "e^1");
+        this.expression = this.expression[$replaceAll]("√", "sqrt");
+        this.expression = this.expression[$replaceAll]("X^", "^");
+        this.expression = this.expression[$replaceAll]("asin", "arcsin");
+        this.expression = this.expression[$replaceAll]("acos", "arccos");
+        this.expression = this.expression[$replaceAll]("atan", "arctan");
+        this.expression = this.expression[$replaceAll]("lg", "log");
+        this.expression = this.expression[$replaceAll](" mód ", "%");
+        try {
+          let p = new math_expressions.Parser.new();
+          let exp = p.parse(this.expression);
+          let cm = new math_expressions.ContextModel.new();
+          scientificCalculator.result = dart.str(exp.evaluate(math_expressions.EvaluationType.REAL, cm));
+          if (scientificCalculator.result === "NaN") scientificCalculator.result = "Error";
+          this[_isIntResult]();
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          scientificCalculator.result = "Error";
+        }
+      }, T.VoidToNull()));
+    }
+    [_isIntResult]() {
+      if (dart.toString(scientificCalculator.result)[$endsWith](".0")) {
+        scientificCalculator.result = dart.toString(core.int.parse(dart.toString(scientificCalculator.result)[$replaceAll](".0", "")));
+      }
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text$.Text.new("Calculator", {$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), centerTitle: true, elevation: 0.0, $creationLocationd_0dea112b090073317d4: C[3] || CT.C3}), body: new container.Container.new({child: new basic.Column.new({children: T.JSArrayOfWidgetL().of([new basic.Expanded.new({child: new container.Container.new({$creationLocationd_0dea112b090073317d4: C[8] || CT.C8}), $creationLocationd_0dea112b090073317d4: C[10] || CT.C10}), new container.Container.new({alignment: alignment.Alignment.topRight, padding: new edge_insets.EdgeInsets.only({left: 20.0, right: 20.0}), child: new single_child_scroll_view.SingleChildScrollView.new({child: !dart.test(this.scientificKeyboard) ? new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.end, children: T.JSArrayOfWidgetL().of([this[_inOutExpression](scientificCalculator.firstOperand, this.equationFontSize), scientificCalculator.operators !== "" ? this[_inOutExpression](scientificCalculator.operators, this.equationFontSize) : new container.Container.new({$creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), scientificCalculator.secondOperand !== "" ? this[_inOutExpression](scientificCalculator.secondOperand, this.equationFontSize) : new container.Container.new({$creationLocationd_0dea112b090073317d4: C[14] || CT.C14}), scientificCalculator.result !== "" ? this[_inOutExpression](scientificCalculator.result, this.resultFontSize) : new container.Container.new({$creationLocationd_0dea112b090073317d4: C[15] || CT.C15})]), $creationLocationd_0dea112b090073317d4: C[16] || CT.C16}) : new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.end, mainAxisAlignment: flex.MainAxisAlignment.end, children: T.JSArrayOfWidgetL().of([this[_inOutExpression](scientificCalculator.equation, this.equationFontSize), scientificCalculator.result !== "" ? this[_inOutExpression](scientificCalculator.result, this.resultFontSize) : new container.Container.new({$creationLocationd_0dea112b090073317d4: C[20] || CT.C20})]), $creationLocationd_0dea112b090073317d4: C[21] || CT.C21}), $creationLocationd_0dea112b090073317d4: C[26] || CT.C26}), $creationLocationd_0dea112b090073317d4: C[29] || CT.C29}), new keyboard.Keyboard.new({keyboardSigns: dart.test(this.scientificKeyboard) ? constants.keyboardScientificCalculator : constants.keyboardSingleCalculator, onTap: dart.bind(this, _onPressed), $creationLocationd_0dea112b090073317d4: C[34] || CT.C34})]), $creationLocationd_0dea112b090073317d4: C[38] || CT.C38}), $creationLocationd_0dea112b090073317d4: C[41] || CT.C41}), $creationLocationd_0dea112b090073317d4: C[44] || CT.C44});
+    }
+    [_inOutExpression](text, size) {
+      return new single_child_scroll_view.SingleChildScrollView.new({reverse: true, scrollDirection: basic_types.Axis.horizontal, child: new text$.Text.new(T.doubleL().is(text) ? text[$toStringAsFixed](2) : dart.toString(text), {style: new text_style.TextStyle.new({color: new ui.Color.new(4282664004), fontSize: T.doubleN().as(size)}), textAlign: ui.TextAlign.end, $creationLocationd_0dea112b090073317d4: C[48] || CT.C48}), $creationLocationd_0dea112b090073317d4: C[53] || CT.C53});
+    }
+  };
+  (scientificCalculator._ScientificCalculatorState.new = function() {
+    this.scientificKeyboard = false;
+    this.expression = "";
+    this.equationFontSize = 35.0;
+    this.resultFontSize = 25.0;
+    scientificCalculator._ScientificCalculatorState.__proto__.new.call(this);
+    ;
+  }).prototype = scientificCalculator._ScientificCalculatorState.prototype;
+  dart.addTypeTests(scientificCalculator._ScientificCalculatorState);
+  dart.addTypeCaches(scientificCalculator._ScientificCalculatorState);
+  dart.setMethodSignature(scientificCalculator._ScientificCalculatorState, () => ({
+    __proto__: dart.getMethods(scientificCalculator._ScientificCalculatorState.__proto__),
+    initialise: dart.fnType(dart.void, []),
+    [_onPressed]: dart.fnType(dart.void, [], {buttonText: dart.legacy(core.String)}, {}),
+    [_clear]: dart.fnType(dart.void, []),
+    [_simpleOperands]: dart.fnType(dart.void, [dart.dynamic]),
+    [_simpleResult]: dart.fnType(dart.void, []),
+    [_scientificOperands]: dart.fnType(dart.void, [dart.dynamic]),
+    [_scientificResult]: dart.fnType(dart.void, []),
+    [_isIntResult]: dart.fnType(dart.dynamic, []),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    [_inOutExpression]: dart.fnType(dart.legacy(framework.Widget), [dart.dynamic, dart.dynamic])
+  }));
+  dart.setLibraryUri(scientificCalculator._ScientificCalculatorState, I[0]);
+  dart.setFieldSignature(scientificCalculator._ScientificCalculatorState, () => ({
+    __proto__: dart.getFields(scientificCalculator._ScientificCalculatorState.__proto__),
+    scientificKeyboard: dart.fieldType(dart.legacy(core.bool)),
+    expression: dart.fieldType(dart.legacy(core.String)),
+    equationFontSize: dart.fieldType(dart.legacy(core.double)),
+    resultFontSize: dart.fieldType(dart.legacy(core.double))
+  }));
+  dart.defineLazy(scientificCalculator, {
+    /*scientificCalculator.firstOperand*/get firstOperand() {
+      return "0";
+    },
+    set firstOperand(_) {},
+    /*scientificCalculator.secondOperand*/get secondOperand() {
+      return "";
+    },
+    set secondOperand(_) {},
+    /*scientificCalculator.operators*/get operators() {
+      return "";
+    },
+    set operators(_) {},
+    /*scientificCalculator.equation*/get equation() {
+      return "0";
+    },
+    set equation(_) {},
+    /*scientificCalculator.result*/get result() {
+      return "";
+    },
+    set result(_) {}
+  }, true);
+  dart.trackLibraries("packages/scientific_calculator/scientificCalculator.dart", {
+    "package:scientific_calculator/scientificCalculator.dart": scientificCalculator
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["scientificCalculator.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAa8C;IAA4B;;;;;;EAC1E;;;;;;;;;;;;;;;;;;;;;;;AAOqB,MAAX;AACM,MAAZ;IACF;;IAMmB;;UAEK;AACtB,cAAQ,UAAU;;;AAKZ,UAHF,cAAS;AACiC,YAAxC,0BAAqB,WAAC;AACd,YAAR;;AAEF;;;;AAIE,UAFF,cAAS;AACC,YAAR;;AAEF;;;;AAoBE,UAlBF,cAAS;AACP,0BAAI;AACqB,cAAvB,wBAAmB;AACE,cAArB,sBAAiB;AACoC,cAArD,gCAAW,AAAS,0CAAU,GAAG,AAAS,AAAO,uCAAE;AACnD,kBAAI,AAAS,kCAAG,IAAI,AAAc,gCAAH;;AAER,cAAvB,wBAAmB;AACE,cAArB,sBAAiB;AACjB,kBAAI,AAAU,mCAAG;AACkD,gBAAjE,oCAAe,AAAa,8CAAU,GAAG,AAAa,AAAO,2CAAE;AAC/D,oBAAI,AAAa,sCAAG,IAAI,AAAkB,oCAAH;;AAGiB,gBADxD,qCACI,AAAc,+CAAU,GAAG,AAAc,AAAO,4CAAE;AACtD,oBAAI,AAAc,uCAAG,IAAI,AAAkB,qCAAF;;;;AAI/C;;;;AAEA,cAAI,AAAO,gCAAG;AAC8C,sBAA1D,2BAAqB,4BAAsB;;AAE7C;;;;AAIiC,oBAFjC,2BACM,0BAAoB,UAAU,IAC9B,sBAAgB,UAAU;;;IAEtC;;AAGoB,MAAlB,oCAAe;AACG,MAAlB,qCAAgB;AACF,MAAd,iCAAY;AACE,MAAd,gCAAW;AACA,MAAX,8BAAS;AACM,MAAf,kBAAa;AACU,MAAvB,wBAAmB;AACE,MAArB,sBAAiB;IACnB;sBAEqB;AA8EjB,MA7EF,cAAS;AACgB,QAAvB,wBAAmB;AACE,QAArB,sBAAiB;AACjB,gBAAQ,KAAK;;;AAET,gBAAI,AAAO,gCAAG;AAC0C,cAAtD,oCAA4C,CAAP,aAAd,kBAAM,gCAAU;kBAClC,KAAI,AAAU,mCAAG;AACtB,kBAAI,AAAc,uCAAG;AACnB,oBAAI,AAAU,0CAAgB,AAAU;AAGvB,kBAFf,qCAEK,CAFwC,AAAO,aAA3B,kBAAM,sCAAgB,mBAChC,kBAAM;sBAEhB,KAAI,AAAU,0CACjB,AAAU;AACkD,kBAA9D,qCAAoD,CAAP,aAArB,kBAAM,uCAAiB;;;;AAInD,kBAAI,AAAa,sCAAG;AAC0C,gBAA5D,oCAAkD,CAAP,aAApB,kBAAM,sCAAgB;;;AAGjD,gBAAiB,AAAW,cAAxB,8CAAiC;AAGhB,cAFnB,oCAES,cADD,eAAmB,AAAW,cAAxB,gDAAmC,MAAM;;AAGzD,gBAAkB,AAAW,cAAzB,+CAAkC;AAGjB,cAFnB,qCAES,cADD,eAAoB,AAAW,cAAzB,iDAAoC,MAAM;;AAG1D;;;;AAEA,gBAAI,AAAO,gCAAG,IAAI,AAAQ;AAC1B,gBAAI,AAAU,mCAAG;AACf,mBAAmB,AAAW,cAAzB,+CAAkC;AACrC,oBAAI,AAAc,uCAAG;AACA,kBAAnB,qCAAgB;;AAEI,kBAApB,qCAAc,aAAd,sCAAiB;;;;AAIrB,mBAAkB,AAAW,cAAxB,8CAAiC;AACpC,oBAAI,AAAa,sCAAG;AACA,kBAAlB,oCAAe;;AAEI,kBAAnB,oCAAa,aAAb,qCAAgB;;;;AAItB;;;;;;;AAKA,gBAAI,AAAa,sCAAG;AAClB,kBAAU,YAAN,KAAK,QAAgB,AAAyB;kBAC7C,KAAI,AAAc,uCAAG;AACT,+CAAjB,eAAY,KAAK;;AAEF,cAAf;AACqB,cAArB,oCAAe;AACE,+CAAjB,eAAY,KAAK;AACC,cAAlB,qCAAgB;AACL,cAAX,8BAAS;;AAEX;;;;AAEA,gBAAI,AAAU,mCAAG;AACO,cAAtB,qCAAc,aAAd,kEAAiB,KAAK;;AAE6C,cAAnE,AAAa,gFAAU,eAAe,KAAK,IAAG,oCAAa,aAAb,iEAAgB,KAAK;;;;;IAI7E;;AAmBI,MAhBF,cAAS;AACgB,QAAvB,wBAAmB;AACE,QAArB,sBAAiB;AACoC,QAArD,kBAA0B,AAAY,aAAzB,kDAAe,+CAAY;AACI,QAA5C,kBAAa,AAAW,6BAAW,KAAK;AACI,QAA5C,kBAAa,AAAW,6BAAW,KAAK;AACxC;AACS,kBAAI;AACA,oBAAM,AAAE,CAAD,OAAO;AACZ,mBAAK;AACiC,UAAnD,8BAAmD,SAAvC,AAAI,GAAD,UAAyB,sCAAM,EAAE;AAChD,cAAI,AAAO,gCAAG,OAAO,AAAwB;AAC/B,UAAd;;cACO;AACiB,UAAxB;;;IAGN;0BAEyB;AAarB,MAZF,cAAS;AACgB,QAAvB,wBAAmB;AACE,QAArB,sBAAiB;AACjB,YAAU,YAAN,KAAK,SAAgB,AAAW,QAAH;AACjC,YAAU,YAAN,KAAK,QAAkB,AAAe,QAAP;AACnC,YAAU,YAAN,KAAK,WAAiB,AAAgB,QAAR;AAClC,YAAU,YAAN,KAAK,WAAiB,AAAgB,QAAR;AAClC,YAAU,YAAN,KAAK,WAAiB,AAAgB,QAAR;AAClC,YAAU,YAAN,KAAK;AACP,cAAI,AAAQ,AAAsB,qCAArB,AAAS,AAAO,uCAAE,YAA0B;;AAEJ,QAAvD,AAAS,wEAAU,eAAW,KAAK,IAAG,gCAAS,aAAT,6DAAY,KAAK;;IAE3D;;AA4BI,MAzBF,cAAS;AACgB,QAAvB,wBAAmB;AACE,QAArB,sBAAiB;AACI,QAArB,kBAAa;AAC+B,QAA5C,kBAAa,AAAW,6BAAW,KAAK;AACI,QAA5C,kBAAa,AAAW,6BAAW,KAAK;AACoB,QAA5D,kBAAa,AAAW,kCAAe;AACS,QAAhD,kBAAa,AAAW,kCAAkB;AACkB,QAA5D,kBAAa,AAAW,kCAA6B;AACF,QAAnD,kBAAa,AAAW,mCAAuB;AACU,QAAzD,kBAAa,AAAW,qCAAwB;AACS,QAAzD,kBAAa,AAAW,qCAAwB;AACS,QAAzD,kBAAa,AAAW,qCAAwB;AACE,QAAlD,kBAAa,AAAW,mCAAoB;AACa,QAAzD,kBAAa,AAAW,6BAAW;AACnC;AACS,kBAAI;AACA,oBAAM,AAAE,CAAD,OAAO;AACZ,mBAAK;AACiC,UAAnD,8BAAmD,SAAvC,AAAI,GAAD,UAAyB,sCAAM,EAAE;AAChD,cAAI,AAAO,gCAAG,OAAO,AAAwB;AAC/B,UAAd;;cACO;AACiB,UAAxB;;;IAGN;;AAGE,UAAW,AAAW,cAAlB,wCAA2B;AACwC,QAArE,8BAA2D,cAA9C,eAAa,AAAW,cAAlB,0CAA6B,MAAM;;IAE1D;UAG0B;AACxB,YAAO,oCACG,+BACC,mBAAK,qFACC,iBACF,oEAEP,oCACG,gCACa,yBAChB,+BAAgB,iJAChB,wCACuB,uCACD,uCAAW,aAAa,eACrC,+DACE,WAAC,2BACF,0CACyC,uCACrB,yBAChB,uBAAiB,mCAAc,wBAC/B,AAAU,mCAAG,KACP,uBAAiB,gCAAW,yBAC5B,wFACN,AAAc,uCAAG,KACX,uBAAiB,oCAAe,yBAChC,wFACN,AAAO,gCAAG,KACJ,uBAAiB,6BAAQ,uBACzB,sJAGV,0CACyC,gDACF,sCACnB,yBAChB,uBAAiB,+BAAU,wBAC3B,AAAO,gCAAG,KACJ,uBAAiB,6BAAQ,uBACzB,2QAKpB,oDACkB,2BACV,yCACA,qDACC;IAMnB;uBAEwB,MAAM;AAC5B,YAAO,kEACI,uBACa,oCACf,mBACA,eAAL,IAAI,IAAa,AAAK,IAAD,mBAAiB,KAAU,cAAL,IAAI,WACxC,qCACE,iBAAM,sCACH,IAAI,gBAEK;IAG3B;;;IApSK,0BAAqB;IAQnB,kBAAa;IACb,wBAAmB;IACnB,sBAAiB;;;EA2R1B;;;;;;;;;;;;;;;;;;;;;;;;;MAjTO,iCAAY;YAAG;;;MACf,kCAAa;YAAG;;;MAChB,8BAAS;YAAG;;;MACZ,6BAAQ;YAAG;;;MACX,2BAAM;YAAG","file":"../../../../../packages/scientific_calculator/scientificCalculator.dart.lib.js"}');
+  // Exports:
+  return {
+    scientificCalculator: scientificCalculator
+  };
+}));
+
+//# sourceMappingURL=scientificCalculator.dart.lib.js.map
